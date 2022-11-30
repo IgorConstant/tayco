@@ -71,7 +71,7 @@ class Filter_model extends CI_Model
       foreach ($data->result_array() as $row) {
         $output .= '
         <div>
-        <a href="produtos/view/' . $row['id'] . '/' . $row['slug'] . '">
+        <a href="produtos/' . $row['slug'] . '">
         <div class="uk-card uk-card-default uk-card-body">
           <img src="' . base_url() . 'upload/produtos/' . $row['imagem_destaque'] . '" alt="">
         </div>

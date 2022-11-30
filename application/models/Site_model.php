@@ -21,6 +21,12 @@ class Site_model extends CI_Model
         return $this->db->get('app_product')->result();
     }
 
+    public function getProductBySlug($slug = NULL)
+    {
+        $this->db->where('slug', $slug);
+        return $this->db->get('app_product')->result();
+    }
+
     public function getGalleryInd($id = NULL)
     {
         $this->db->where('id_app_product', $id);

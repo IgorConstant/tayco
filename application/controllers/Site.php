@@ -111,13 +111,20 @@ class Site extends CI_Controller
         $this->load->view('web/layout/footer');
     }
 
-    public function View($id)
+    public function View()
     {
 
+        $slug = $this->uri->segment(2);
+
         $data['titulo'] = 'Tayco - Produtos';
-        $query = $this->site_model->getProductInd($id);
+
+        $query  = $this->site_model->getProductBySlug($slug);
+
+        $id     = $query[0]->id;
+
         $projectGallery = $this->site_model->getGalleryInd($id);
         $acessories = $this->site_model->getAcessoriesInd($id);
+
         $data['acessories'] = $acessories;
         $data['projectGallery'] = $projectGallery;
         $data['query'] = $query;

@@ -57,7 +57,10 @@ $route['translate_uri_dashes'] = FALSE;
 
 /* Rotas para controller do site */
 $route['produtos'] = "Site/Produtos/";
-$route['produtos/view/(.+)'] = "Site/View/$1";
+$route['produtos/:any'] = "Site/view";
+
+
+
 $route['contato'] = "Site/Contato";
 $route['blog'] = "Site/Blog/";
 $route['blog/view/(.+)'] = "Site/ViewBlog/$1";
