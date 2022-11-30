@@ -1,0 +1,90 @@
+#blogHeader {
+    background: url(../../../assets/site/images/banner-blog.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    height: 400px;
+    max-height: 500px;
+
+    @media (max-width: 767.98px) {
+        height: 100px;
+
+        .titleHeader {
+            display: none;
+        }
+    }
+
+    .uk-container {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .titleHeader {
+            h1 {
+                font-family: gothamLight;
+            }
+        }
+    }
+}
+
+#blogContent {
+    padding: 60px 0;
+
+    .uk-card-default {
+        h3 {
+            font-family: gothamBold;
+            color: $red-color;
+            margin: 7px 0;
+        }
+
+        small {
+            color: $black-color;
+            font-family: gothamLight;
+        }
+
+        p {
+            a {
+                color: $red-color;
+                text-transform: uppercase;
+                font-size: 12px;
+                text-decoration: none;
+            }
+        }
+
+        .excerpt {
+            font-size: 13px;
+        }
+    }
+}
+
+#blogSingle {
+    .contentSingle {
+        > img {
+            margin: 30px 0;
+        }
+
+        small {
+            color: $black-color;
+            font-family: gothamLight;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.5rem;
+            color: $black-color;
+        }
+    }
+}
+
+#postHeader {
+    padding: 60px 0;
+    background: #eeeeee;
+
+    h1 {
+        color: $black-color;
+        text-transform: uppercase;
+        font-family: gothamLight;
+    }
+}

@@ -1,0 +1,199 @@
+#cardsIntro {
+    padding-bottom: 60px;
+
+    margin-top: -10%;
+
+    a {
+        text-decoration: none;
+    }
+
+    .uk-card-default {
+        background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+        background-size: cover;
+        border-radius: 5px;
+
+        p {
+            color: $white-color;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        transition: all 0.3s ease 0s;
+        margin-top: 5px;
+
+        &:hover {
+            box-shadow: 0px 15px 20px rgba(53, 19, 18, 0.4);
+            transform: translateY(-7px);
+        }
+    }
+
+    @media(max-width: 767.98px) {
+        padding: 20px;
+    }
+}
+
+#produtosDestaque {
+    .titleSection {
+        h4 {
+            text-transform: uppercase;
+            color: $black-color;
+        }
+
+        p {
+            color: $black-color;
+            font-size: 14px;
+        }
+    }
+
+    #homeProducts {
+
+        a {
+            text-decoration: none;
+
+            .titleProduct {
+                color: $black-color;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-family: gothamBold;
+            }
+        }
+    }
+}
+
+#newProduct {
+    background: $gray-color;
+    padding: 60px 0;
+
+    @media(max-width: 767.98px) {
+        padding: 60px 20px;
+    }
+
+    .content {
+        @media (min-width: 1200px) {
+            padding-right: 20%;
+        }
+
+        h1 {
+            span {
+                color: $red-color;
+            }
+        }
+
+        .uk-button-default {
+            background: $red-color;
+            color: $white-color;
+            border: 0;
+            border-radius: 5px;
+            font-size: 13px;
+            padding: 5px 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: gothamBook;
+            transition: all 0.3s ease 0s;
+
+            &:hover {
+                background: $white-color;
+                color: $red-color;
+                border: 1px solid $red-color;
+            }
+        }
+    }
+}
+
+#abntBlock {
+    background: url(../../../assets/site/images/bg-abnt.png) no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+
+    .content {
+        p {
+            color: $white-color;
+        }
+    }
+}
+
+#classeProduto {
+    .bgProduct {
+        background: url(../../../assets/site/images/img-destaque-produto.png) no-repeat center center;
+        background-size: cover;
+        height: 800px;
+
+        .content {
+            padding: 0 10%;
+            position: relative;
+            top: 70%;
+
+            h3 {
+                text-transform: uppercase;
+                color: $red-color;
+            }
+
+            p {
+                color: $black-color;
+                font-size: 14px;
+            }
+
+            .uk-button-default {
+                background: $red-color;
+                color: $white-color;
+                border-radius: 5px;
+                font-family: gothamBold;
+            }
+        }
+    }
+}
+
+#solutions {
+    .content {
+        padding: 10%;
+
+        h2 {
+            font-family: GothamLight;
+        }
+
+        hr {
+            border-top: 2px solid $red-color;
+            width: 50px;
+        }
+
+        p {
+            color: $black-color;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .uk-button-default {
+            margin-left: 20px;
+            background: $red-color;
+            color: $white-color;
+            border-radius: 5px;
+            font-family: gothamBold;
+        }
+    }
+}
+
+#stamps {
+    background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+
+    .flexbox {
+        display: flex;
+        align-items: center;
+        margin: auto;
+
+        img {
+            //margin: 10px;
+            padding: 10px;
+
+            width: 20%;
+        }
+
+        span {
+            color: $white-color;
+            font-family: GothamBold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+}

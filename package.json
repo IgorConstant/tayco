@@ -1,0 +1,29 @@
+{
+  "name": "tayco",
+  "version": "1.0.0",
+  "description": "Projeto do novo site da Tayco",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorConstant/tayco.git"
+  },
+  "author": "Igor Henrique Constant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorConstant/tayco/issues"
+  },
+  "homepage": "https://github.com/IgorConstant/tayco#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.56.0",
+    "uikit": "^3.15.12"
+  }
+}

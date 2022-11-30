@@ -1,0 +1,34 @@
+body {
+	color: #152121;
+	background-color: #fff;
+}
+
+#mode-remover,
+#mode-toggler {
+	color: #fff;
+	background-color: #252526;
+}
+
+header,
+footer {
+	background-color: #f8f8f8;
+}
+
+.header-description {
+	color: #aaa;
+}
+
+pre {
+	background-color: #f8f8f8;
+	-webkit-box-shadow: 9999px 0 0 0 #f8f8f8;
+	box-shadow: 9999px 0 0 0 #f8f8f8;
+}
+
+code {
+	color: #333;
+}
+
+
+.border-left-primary {
+	border-left: 0.25rem solid #000000 !important;
+}

@@ -1,0 +1,251 @@
+#headerContent {
+  background: url(../../../assets/site/images/banner-produtos.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0;
+  height: 400px;
+  max-height: 500px;
+
+  @media (max-width: 767.98px) {
+    height: 100px;
+
+    .titleHeader {
+      display: none;
+    }
+  }
+
+  .uk-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .titleHeader {
+      h1 {
+        font-family: gothamLight;
+      }
+    }
+  }
+}
+
+#listProduct {
+  margin: 50px 0;
+
+  @media(max-width: 767.98px) {
+    padding: 20px;
+  }
+
+  .filterBlock {
+    h5 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    hr {
+      width: 20%;
+      border-top: 2px solid $red-color;
+    }
+
+    .list-group-item label {
+      font-family: gothamLight;
+      font-size: 14px;
+      color: $black-color;
+    }
+  }
+
+  .productContent {
+    a {
+      text-decoration: none;
+
+      .uk-card-default {
+        background: #f1f1f1;
+      }
+
+      .titleProdBlock {
+        margin: 25px 0;
+
+        .titleProduct {
+          text-transform: uppercase;
+          margin: 5px 0;
+        }
+
+        small {
+          font-family: gothamLight;
+          text-transform: uppercase;
+          font-size: 70%;
+          color: $black-color;
+        }
+      }
+    }
+  }
+}
+
+#loading {
+  text-align: center;
+  background: url(../../../assets/site/images/loader.gif);
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* INTERNAL */
+
+#productPresent {
+  padding: 60px 0;
+  background: url(../../../assets/site/images/textura-produtos.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .tituloProduto {
+    text-transform: uppercase;
+    font-family: gothamBoldItalic;
+    color: #212121;
+  }
+
+  @media (max-width: 767.98px) {
+
+    .linhaProduto,
+    .catProduto,
+    .color,
+    .classeProduto {
+      font-size: 9px !important;
+    }
+  }
+
+  .linhaProduto {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: $black-color;
+
+    /*span {
+      border: 1px solid $black-color;
+      padding: 5px;
+    }*/
+  }
+
+  .catProduto {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: $black-color;
+
+    /*span {
+      border: 1px solid $black-color;
+      padding: 5px;
+    }*/
+  }
+
+  .descProduto {
+    font-size: 14px;
+    margin: 20px 0;
+    color: $black-color;
+  }
+
+  .classeProduto {
+    margin: 20px 0;
+    color: $black-color;
+    font-size: 12px;
+
+    /*span {
+      border: 1px solid $black-color;
+      padding: 5px;
+    }*/
+  }
+
+  .color {
+    margin: 20px 0;
+    color: $black-color;
+    font-size: 12px;
+
+    /*span {
+      border: 1px solid $black-color;
+      padding: 5px;
+    }*/
+  }
+
+  .uk-card-default {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+#description {
+  margin: 0 0 50px 0;
+
+  h6 {
+    text-transform: uppercase;
+    margin: 5px 0;
+  }
+
+  hr {
+    width: 40px;
+    border-top: 2px solid $red-color;
+    margin: 10px 0;
+  }
+
+  .blockDesc {
+    p {
+      font-size: 13px;
+      margin-left: 20px;
+      color: $black-color;
+    }
+  }
+
+  .blockDownloads {
+    .uk-button-default {
+      margin: 10px 0;
+      font-size: 12px;
+      text-align: left;
+      font-family: gothamLight;
+      border: 1px solid #959595;
+    }
+  }
+
+  .uk-card-default {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+#thumbImage {
+  margin-top: 5px;
+}
+
+#acessories {
+  padding: 30px 50px;
+
+  .titleBlock {
+    h6 {
+      text-transform: uppercase;
+      margin: 5px 0;
+    }
+
+    hr {
+      width: 40px;
+      border-top: 2px solid $red-color;
+      margin: 10px 0;
+    }
+  }
+
+  #homeProducts {
+    margin-top: 20px;
+
+    a {
+      text-decoration: none;
+
+      .uk-card-default {
+        background: #f1f1f1;
+      }
+
+      .titleAcessorio {
+        text-transform: uppercase;
+        margin: 20px 0;
+        color: $black-color !important;
+        font-size: 14px;
+        font-family: gothamBold;
+      }
+    }
+  }
+}

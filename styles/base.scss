@@ -1,0 +1,183 @@
+@font-face {
+    font-family: gothamBook;
+    src: url("../../../assets/site/fonts/GothamBook.ttf");
+}
+
+@font-face {
+    font-family: gothamBold;
+    src: url("../../../assets/site/fonts/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: gothamBoldItalic;
+    src: url("../../../assets/site/fonts/GothamBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: gothamLight;
+    src: url("../../../assets/site/fonts/GothamLight.ttf");
+}
+
+body {
+    -webkit-text-stroke-color: #333;
+    -webkit-text-stroke: 0.2px;
+}
+
+p {
+    font-family: gothamBook;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: gothamBold;
+}
+
+.slideHome {
+    .uk-slideshow-items {
+        .uk-position-center-right {
+            @media (min-width: 1200px) {
+                width: 600px;
+                right: 3%;
+            }
+
+            .captionSlideshow {
+                padding: 20px;
+            }
+        }
+
+        .uk-panel {
+            h2 {
+                text-transform: uppercase;
+                color: $black-color;
+                margin-bottom: 5px;
+            }
+
+            h3 {
+                color: $red-color;
+                margin-top: 5px;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $black-color;
+            }
+
+            .uk-button-default {
+                background: $red-color;
+                font-family: gothamBold;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+#moreContent {
+    .bgFirst {
+        background: url(../../../assets/site/images/textura-azul-claro.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+
+        .textCard {
+            color: $white-color;
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+    }
+
+    .bgSecond {
+        background: url(../../../assets/site/images/textuta-azul-medio-escuro.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+
+        .textCard {
+            color: $white-color;
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+    }
+
+    .bgThird {
+        background: url(../../../assets/site/images/textura-darkblue.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+
+        .textCard {
+            color: $white-color;
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+    }
+
+    #blockContentProduct {
+        background: #ececec;
+        padding: 60px 0;
+
+        .titleBlock {
+            font-family: gothamBold;
+            text-transform: uppercase;
+            color: $black-color;
+        }
+
+        hr {
+            width: 40px;
+            border-top: 2px solid $red-color;
+            margin: 10px 0;
+        }
+
+        .textBlock {
+            font-size: 14px;
+            color: $black-color;
+            margin-left: 20px;
+        }
+    }
+}
+
+#pagination_link {
+    margin-top: 30px;
+
+    .pagination {
+        list-style: none;
+
+        >li {
+            display: inline-block;
+            margin-right: 20px;
+
+            a {
+                color: $black-color;
+                font-family: gothamLight;
+            }
+        }
+    }
+}
+
+
+.uk-accordion {
+    background: $red-color;
+    padding: 20px;
+
+    .uk-accordion-title {
+        font-family: gothamBold;
+        text-transform: uppercase;
+        color: $white-color;
+        font-size: 14px;
+    }
+
+    .uk-accordion-title::before {
+        background: none;
+        content: "+";
+    }
+
+    .uk-open>.uk-accordion-title::before {
+        content: "-";
+    }
+}

@@ -1,0 +1,37 @@
+footer {
+  padding: 20px 0;
+
+  .brandFooter,
+  .copyright,
+  .socialIcons {
+    margin-top: 20px;
+  }
+
+  .copyright {
+    p {
+      margin-bottom: 0;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+  }
+
+  .socialIcons {
+    ul {
+      list-style: none;
+
+      > li {
+        display: inline-block;
+        margin-right: 10px;
+
+        a {
+          .fa-facebook-square,
+          .fa-instagram-square,
+          .fa-linkedin {
+            color: $black-color;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
