@@ -56,6 +56,12 @@ class Site_model extends CI_Model
         return $this->db->get('app_blog')->result();
     }
 
+    public function getPostBySlug($slug = NULL)
+    {
+        $this->db->where('slug', $slug);
+        return $this->db->get('app_blog')->result();
+    }
+
     public function buscar_cores_produto( $id )
     {
         $q = $this->db->query("SELECT GROUP_CONCAT(`nome_cor` separator ', ') AS cores FROM app_cor WHERE id IN (SELECT cor_id FROM app_produto_tem_cor WHERE produto_id = $id)")->row();
