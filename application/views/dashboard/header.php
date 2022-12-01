@@ -63,17 +63,11 @@
                         <li class="nav-item">
                             <?php echo anchor('banners', '<span><i class="fas fa-laptop-code"></i> Banners Home</span>', array('class' => 'nav-link')) ?>
                         </li>
-                        <!-- <li class="nav-item">
-                            <?php echo anchor('conteudo', '<span><i class="fas fa-laptop-code"></i> Sobre</span>', array('class' => 'nav-link')) ?>
-                        </li> -->
-                        <li class="nav-item">
-                            <?php echo anchor('produtos_admin', '<span><i class="fas fa-laptop-code"></i> Produtos</span>', array('class' => 'nav-link')) ?>
-                        </li>
-                        <li class="nav-item">
-                            <?php echo anchor('acessorios_admin', '<span><i class="fas fa-laptop-code"></i> Acessórios</span>', array('class' => 'nav-link')) ?>
-                        </li>
                         <li class="nav-item">
                             <?php echo anchor('posts', '<span><i class="fas fa-laptop-code"></i> Blog</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php echo anchor('produtos_admin', '<span><i class="fas fa-laptop-code"></i> Produtos</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
                             <?php echo anchor('cores_admin', '<span><i class="fas fa-laptop-code"></i> Cores</span>', array('class' => 'nav-link')) ?>
@@ -85,13 +79,16 @@
                             <?php echo anchor('filtragens_quimicas_admin', '<span><i class="fas fa-laptop-code"></i> Filtragens Químicas</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
-                            <?php echo anchor('galeria', '<span><i class="fas fa-laptop-code"></i> Galeria</span>', array('class' => 'nav-link')) ?>
-                        </li>
-                        <li class="nav-item">
                             <?php echo anchor('linhas_admin', '<span><i class="fas fa-laptop-code"></i> Linhas</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
                             <?php echo anchor('tipos_produtos_admin', '<span><i class="fas fa-laptop-code"></i> Tipos de Produtos</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php echo anchor('acessorios_admin', '<span><i class="fas fa-laptop-code"></i> Acessórios</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php echo anchor('galeria', '<span><i class="fas fa-laptop-code"></i> Galeria</span>', array('class' => 'nav-link')) ?>
                         </li>
                     </ul>
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
