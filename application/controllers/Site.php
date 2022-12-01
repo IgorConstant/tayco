@@ -58,44 +58,48 @@ class Site extends CI_Controller
     function fetch_data()
     {
         sleep(1);
-        $cor = $this->input->post('cor');
-        $tamanho = $this->input->post('tamanho');
-        $categoria = $this->input->post('categoria');
-        $classe = $this->input->post('classe');
-        $linha = $this->input->post('linha');
+        $cor            = $this->input->post('cor');
+        $tamanho        = $this->input->post('tamanho');
+        $categoria      = $this->input->post('categoria');
+        $classe         = $this->input->post('classe');
+        $linha          = $this->input->post('linha');
+        $quimico         = $this->input->post('quimico');
+
+        
 
         $this->load->library('pagination');
         $config = array();
-        $config["base_url"] = "#";
-        $config["total_rows"] = $this->filter_model->count_all($categoria, $cor, $tamanho, $classe, $linha);
-        $config["per_page"] = 8;
-        $config["uri_segment"] = 3;
-        $config['use_page_numbers'] = TRUE;
-        $config["full_tag_open"] = '<ul class="pagination">';
-        $config["full_tag_close"] = '</ul>';
-        $config["first_tag_open"] = '<li>';
-        $config["first_tag_close"] = '</li>';
-        $config["last_tag_open"] = '<li>';
-        $config["last_tag_close"] = '</li>';
-        $config['next_link'] = '&gt;';
-        $config["next_tag_open"] = '<li>';
-        $config["next_tag_close"] = '</li>';
-        $config["prev_link"] = "&lt;";
-        $config["prev_tag_open"] = "<li>";
-        $config["prev_tag_close"] = "</li>";
-        $config["cur_tag_open"] = "<li class='active'><a href='#'>";
-        $config["cur_tag_close"] = "</a></li>";
-        $config["num_tag_open"] = "<li>";
-        $config["num_tag_close"] = "</li>";
-        $config["num_links"] = 3;
+        $config["base_url"]             = "#";
+        $config["total_rows"]           = $this->filter_model->count_all($categoria, $cor, $tamanho, $classe, $linha, $quimico);
+        $config["per_page"]             = 8;
+        $config["uri_segment"]          = 3;
+        $config['use_page_numbers']     = TRUE;
+        $config["full_tag_open"]        = '<ul class="pagination">';
+        $config["full_tag_close"]       = '</ul>';
+        $config["first_tag_open"]       = '<li>';
+        $config["first_tag_close"]      = '</li>';
+        $config["last_tag_open"]        = '<li>';
+        $config["last_tag_close"]       = '</li>';
+        $config['next_link']            = '&gt;';
+        $config["next_tag_open"]        = '<li>';
+        $config["next_tag_close"]       = '</li>';
+        $config["prev_link"]            = "&lt;";
+        $config["prev_tag_open"]        = "<li>";
+        $config["prev_tag_close"]       = "</li>";
+        $config["cur_tag_open"]         = "<li class='active'><a href='#'>";
+        $config["cur_tag_close"]        = "</a></li>";
+        $config["num_tag_open"]         = "<li>";
+        $config["num_tag_close"]        = "</li>";
+        $config["num_links"]            = 3;
         $this->pagination->initialize($config);
         $page = $this->uri->segment('3');
         $start = ($page - 1) * $config["per_page"];
 
         $output = array(
             'pagination_link'        =>    $this->pagination->create_links(),
-            'product_list'            =>    $this->filter_model->fetch_data($config["per_page"], $start, $categoria, $cor, $tamanho, $classe, $linha)
+            'product_list'            =>    $this->filter_model->fetch_data($config["per_page"], $start, $categoria, $cor, $tamanho, $classe, $linha, $quimico)
         );
+
         echo json_encode($output);
     }
 

@@ -52,6 +52,7 @@
             var categoria = get_filter('categoria');
             var classe = get_filter('classe');
             var linha = get_filter('linha');
+            var quimico = get_filter('quimico');
 
             $.ajax({
                 url: "<?php echo base_url(); ?>site/fetch_data/" + page,
@@ -63,7 +64,8 @@
                     tamanho: tamanho,
                     categoria: categoria,
                     classe: classe,
-                    linha: linha
+                    linha: linha,
+                    quimico
                 },
                 success: function(data) {
                     $('.filter_data').html(data.product_list);

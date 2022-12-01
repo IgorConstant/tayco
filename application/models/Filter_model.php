@@ -56,7 +56,7 @@ class Filter_model extends CI_Model
     return $query;
   }
 
-  function fetch_data($limit, $start, $categoria, $cor, $tamanho, $classe, $linha)
+  function fetch_data($limit, $start, $categoria, $cor, $tamanho, $classe, $linha, $quimico)
   {
 
     $query = $this->make_query($categoria, $cor, $tamanho, $classe, $linha);
@@ -90,7 +90,7 @@ class Filter_model extends CI_Model
     return $output;
   }
 
-  function count_all($categoria, $cor, $tamanho, $classe, $linha)
+  function count_all($categoria, $cor, $tamanho, $classe, $linha, $quimico)
   {
     $query = $this->make_query($categoria, $cor, $tamanho, $classe, $linha);
     $data = $this->db->query($query);
