@@ -68,7 +68,7 @@
                 <div id="homeProducts" class="owl-carousel owl-theme">
                     <?php foreach ($app_product as $product) { ?>
                         <div class="item">
-                            <a href="<?= base_url("produtos/view/" . $product->id . "/" . $product->slug) ?>">
+                            <a href="<?= base_url("produtos/" . $product->slug) ?>">
                                 <div class="uk-card uk-card-default uk-card-body">
                                     <img src="upload/produtos/<?= $product->imagem_destaque ?>" alt="<?= $product->nome ?>">
                                 </div>
@@ -89,7 +89,7 @@
                         <div class="content">
                             <h1>LINHA <span>T-9500</span> <br> NOSSO ÚLTIMO <br> LANÇAMENTO.</h1>
                             <p>Respirador semifacial reutilizável, conta com copa em silicone e 3 tamanhos disponíveis. Além disso, tem uma grande variedade de filtros mecânicos e cartuchos químicos sem abrir mão do melhor custo benefício.</p>
-                            <a class="uk-button uk-button-default" href="">Clique e Conheça</a>
+                            <a class="uk-button uk-button-default" href="<?php echo base_url("produtos/respirador-t9500") ?>">Clique e Conheça</a>
                         </div>
                     </div>
                 </div>

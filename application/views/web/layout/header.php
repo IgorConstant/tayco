@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="equipamentos de proteção respiratória, médico-hospitalar, industrial, mineração, laboratórios, química, agroquímica, agricultura, construção civil, PFF1, PFF2, PFF3">
+    <meta name="description" content="Uma empresa preocupada com sua segurança, saúde e comprometida com a qualidade.">
     <meta name="author" content="Igor Henrique Constant">
     <link rel="icon" type="image/png" href="<?php echo base_url('assets/site/images/favicon-tayco.png'); ?>" />
     <!-- OGTags -->
     <meta property="og:title" content="Tayco" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="https://www.tayco.com.br" />
     <meta property="og:type" content="website" />
     <meta property="og:locale:alternate" content="pt_BR">
     <meta property="og:description" content="" />

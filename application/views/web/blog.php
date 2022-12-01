@@ -21,7 +21,7 @@
                                 <small><?php echo $b->category ?></small>
                                 <h3><?php echo $b->title; ?></h3>
                                 <p class="uk-margin-small excerpt"><?php echo word_limiter($b->content_post, 20) ?></p>
-                                <p><a href="<?= base_url("blog/view/" . $b->id . "/" . $b->slug) ?>">Leia Mais</a></p>
+                                <p><a href="<?= base_url("blog/" . $b->slug) ?>">Leia Mais</a></p>
                             </div>
                         </div>
                     <?php } ?>
