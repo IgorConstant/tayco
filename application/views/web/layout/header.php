@@ -8,7 +8,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="Igor Henrique Constant">
-
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/site/images/favicon-tayco.png'); ?>" />
     <!-- OGTags -->
     <meta property="og:title" content="Tayco" />
     <meta property="og:url" content="" />
