@@ -16,13 +16,13 @@
         <div class="col-12 col-sm-12 mb-4">
             <form action="" method="post">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" name="nome">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
                             <input type="text" class="form-control" id="slug" name="slug">
