@@ -104,6 +104,19 @@
                         </select>
                         </div>
                     </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                        <label for="corProduto" class="form-label">Filtragens Mecânicas</label>
+                        <select class="form-control" name="mecanicas[]" id="mecanicas" multiple>
+                            <option value="" selected disabled> Selecione uma ou várias</option>
+                            <?php
+                                foreach( $mecanicas AS $mec ){
+                                    echo "<option value=\"$mec->id\">$mec->nome_filtragem</option>";
+                                }
+                            ?>
+                        </select>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="mb-4">
                             <label for="editor1" class="form-label">Descrição do Produto</label>
