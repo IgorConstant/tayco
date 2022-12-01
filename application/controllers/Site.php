@@ -65,7 +65,7 @@ class Site extends CI_Controller
         $linha          = $this->input->post('linha');
         $quimico         = $this->input->post('quimico');
 
-        
+
 
         $this->load->library('pagination');
         $config = array();
@@ -128,7 +128,7 @@ class Site extends CI_Controller
         $data['titulo']             = 'Tayco - Produtos';
         $data['query']              = $this->site_model->getProductBySlug($this->uri->segment(2));
 
-        if( count($data['query']) == 0 ){//Caso não encontre o produto
+        if (count($data['query']) == 0) { //Caso não encontre o produto
             redirect('../produtos');
         }
 
@@ -157,12 +157,11 @@ class Site extends CI_Controller
     }
 
 
-    public function ViewBlog($id)
+    public function ViewBlog()
     {
         $data['titulo'] = 'Tayco - Blog';
 
-        $query = $this->site_model->getPostInd($id);
-        $data['query'] = $query;
+        $data['query']              = $this->site_model->getPostBySlug($this->uri->segment(2));
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-blog');
