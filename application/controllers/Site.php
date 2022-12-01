@@ -37,11 +37,18 @@ class Site extends CI_Controller
 
         $data['titulo'] = 'Tayco - Produtos';
 
-        $data['cor_data'] = $this->filter_model->fetch_filter_type('cor');
-        $data['tamanho_data'] = $this->filter_model->fetch_filter_type('tamanho');
+        //$data['cor_data'] = $this->filter_model->fetch_filter_type('cor');
+        /*;
         $data['categoria_data'] = $this->filter_model->fetch_filter_type('categoria');
         $data['classe_data'] = $this->filter_model->fetch_filter_type('classe');
-        $data['linha_data'] = $this->filter_model->fetch_filter_type('linha');
+        $data['linha_data'] = $this->filter_model->fetch_filter_type('linha');*/
+
+        $data['cores']          = $this->filter_model->buscar_cores();
+        $data['tipos']          = $this->filter_model->buscar_tipos();
+        $data['linhas']         = $this->filter_model->buscar_linhas();
+        $data['mecanicas']      = $this->filter_model->buscar_mecanicas();
+        $data['quimicos']       = $this->filter_model->buscar_quimicas();
+        $data['tamanho_data']   = $this->filter_model->fetch_filter_type('tamanho');
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/produtos', $data);
@@ -124,6 +131,9 @@ class Site extends CI_Controller
         $id                         = $data['query'][0]->id;
         $data['acessories']         = $this->site_model->getAcessoriesInd($id);
         $data['projectGallery']     = $this->site_model->getGalleryInd($id);
+        $data['cores']              = $this->site_model->buscar_cores_produto($id);
+        $data['linhas']             = $this->site_model->buscar_linhas_produto($id);
+        $data['mecanicas']          = $this->site_model->buscar_mecanicas_produto($id);
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-produto');

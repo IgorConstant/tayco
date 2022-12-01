@@ -18,32 +18,43 @@
               <h5>Classe de Produto</h5>
               <hr />
               <?php
-              foreach ($classe_data->result_array() as $row) {
+              foreach ($mecanicas AS $mec) {
+                ?>
+                  <div class="list-group-item checkbox">
+                    <label><input type="checkbox" class="common_selector classe" value="<?php echo $mec->id; ?>"> <?php echo $mec->nome_filtragem; ?></label>
+                  </div>
+                <?php
+                }
               ?>
-                <div class="list-group-item checkbox">
-                  <label><input type="checkbox" class="common_selector classe" value="<?php echo $row['classe']; ?>"> <?php echo $row['classe']; ?></label>
-                </div>
+              <h5>Filtros Químicos</h5>
+              <hr />
               <?php
-              }
+              foreach ($quimicos AS $qui) {
+                ?>
+                  <div class="list-group-item checkbox">
+                    <label><input type="checkbox" class="common_selector quimico" value="<?php echo $qui->id; ?>"> <?php echo $qui->nome_filtragem; ?></label>
+                  </div>
+                <?php
+                }
               ?>
               <h5>Linha de Produto</h5>
               <hr />
               <?php
-              foreach ($linha_data->result_array() as $row) {
-              ?>
-                <div class="list-group-item checkbox">
-                  <label><input type="checkbox" class="common_selector linha" value="<?php echo $row['linha']; ?>"> <?php echo $row['linha']; ?></label>
-                </div>
-              <?php
-              }
+              foreach ($linhas AS $linha) {
+                ?>
+                  <div class="list-group-item checkbox">
+                    <label><input type="checkbox" class="common_selector linha" value="<?php echo $linha->id; ?>"> <?php echo $linha->nome_linha; ?></label>
+                  </div>
+                <?php
+                }
               ?>
               <h5>Cor de Produtos</h5>
               <hr />
               <?php
-              foreach ($cor_data->result_array() as $row) {
+              foreach ($cores AS $cor) {
               ?>
                 <div class="list-group-item checkbox">
-                  <label><input type="checkbox" class="common_selector cor" value="<?php echo $row['cor']; ?>"> <?php echo $row['cor']; ?></label>
+                  <label><input type="checkbox" class="common_selector cor" value="<?php echo $cor->id; ?>"> <?php echo $cor->nome_cor; ?></label>
                 </div>
               <?php
               }
@@ -51,13 +62,13 @@
               <h5>Categoria de Produtos</h5>
               <hr />
               <?php
-              foreach ($categoria_data->result_array() as $row) {
-              ?>
-                <div class="list-group-item checkbox">
-                  <label><input type="checkbox" class="common_selector categoria" value="<?php echo $row['categoria']; ?>"> <?php echo $row['categoria']; ?></label>
-                </div>
-              <?php
-              }
+              foreach ($tipos AS $tipo) {
+                ?>
+                  <div class="list-group-item checkbox">
+                    <label><input type="checkbox" class="common_selector categoria" value="<?php echo $tipo->id; ?>"> <?php echo $tipo->nome_tipo; ?></label>
+                  </div>
+                <?php
+                }
               ?>
               <h5>Tamanho de Produtos</h5>
               <hr />
@@ -82,46 +93,57 @@
             <h5>Classe de Produto</h5>
             <hr />
             <?php
-            foreach ($classe_data->result_array() as $row) {
+            foreach ($mecanicas AS $mec) {
+              ?>
+                <div class="list-group-item checkbox">
+                  <label><input type="checkbox" class="common_selector classe" value="<?php echo $mec->id; ?>"> <?php echo $mec->nome_filtragem; ?></label>
+                </div>
+              <?php
+              }
             ?>
-              <div class="list-group-item checkbox">
-                <label><input type="checkbox" class="common_selector classe" value="<?php echo $row['classe']; ?>"> <?php echo $row['classe']; ?></label>
-              </div>
-            <?php
-            }
-            ?>
+            <h5>Filtros Químicos</h5>
+            <hr />
+              <?php
+              foreach ($quimicos AS $qui) {
+                ?>
+                  <div class="list-group-item checkbox">
+                    <label><input type="checkbox" class="common_selector quimico" value="<?php echo $qui->id; ?>"> <?php echo $qui->nome_filtragem; ?></label>
+                  </div>
+                <?php
+                }
+              ?>
             <h5>Linha de Produto</h5>
             <hr />
             <?php
-            foreach ($linha_data->result_array() as $row) {
-            ?>
-              <div class="list-group-item checkbox">
-                <label><input type="checkbox" class="common_selector linha" value="<?php echo $row['linha']; ?>"> <?php echo $row['linha']; ?></label>
-              </div>
-            <?php
-            }
+             foreach ($linhas AS $linha) {
+              ?>
+                <div class="list-group-item checkbox">
+                  <label><input type="checkbox" class="common_selector linha" value="<?php echo $linha->id; ?>"> <?php echo $linha->nome_linha; ?></label>
+                </div>
+              <?php
+              }
             ?>
             <h5>Cor de Produtos</h5>
             <hr />
             <?php
-            foreach ($cor_data->result_array() as $row) {
-            ?>
-              <div class="list-group-item checkbox">
-                <label><input type="checkbox" class="common_selector cor" value="<?php echo $row['cor']; ?>"> <?php echo $row['cor']; ?></label>
-              </div>
-            <?php
-            }
+            foreach ($cores AS $cor) {
+              ?>
+                <div class="list-group-item checkbox">
+                  <label><input type="checkbox" class="common_selector cor" value="<?php echo $cor->id; ?>"> <?php echo $cor->nome_cor; ?></label>
+                </div>
+              <?php
+              }
             ?>
             <h5>Categoria de Produtos</h5>
             <hr />
             <?php
-            foreach ($categoria_data->result_array() as $row) {
-            ?>
-              <div class="list-group-item checkbox">
-                <label><input type="checkbox" class="common_selector categoria" value="<?php echo $row['categoria']; ?>"> <?php echo $row['categoria']; ?></label>
-              </div>
-            <?php
-            }
+            foreach ($tipos AS $tipo) {
+              ?>
+                <div class="list-group-item checkbox">
+                  <label><input type="checkbox" class="common_selector categoria" value="<?php echo $tipo->id; ?>"> <?php echo $tipo->nome_tipo; ?></label>
+                </div>
+              <?php
+              }
             ?>
             <h5>Tamanho de Produtos</h5>
             <hr />

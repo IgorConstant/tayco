@@ -33,10 +33,10 @@
       <div class="uk-flex uk-flex-middle">
         <div class="uk-card uk-card-default uk-card-body">
           <?php foreach ($query as $q) { ?>
-            <p class="linhaProduto"><b>Linha</b> <span><?php echo $q->linha ?></span></p>
+            <p class="linhaProduto"><b>Linhas</b> <span><?php echo $linhas ?></span></p>
             <p class="catProduto"><b>Categoria</b> <span><?php echo $q->categoria; ?></span></p>
-            <p class="color"><b>CORES</b> <span><?php echo $q->cor ?></span></p>
-            <p class="classeProduto"><b>CLASSE</b> <span><?php echo $q->classe ?></span></p>
+            <p class="color"><b>CORES</b> <span><?php echo $cores ?></span></p>
+            <p class="classeProduto"><b>CLASSE</b> <span><?php echo $mecanicas ?></span></p>
             <p class="descProduto"><?php echo $q->descricao_curta; ?></p>
           <?php } ?>
         </div>

@@ -96,4 +96,30 @@ class Filter_model extends CI_Model
     $data = $this->db->query($query);
     return $data->num_rows();
   }
+
+  function buscar_cores()
+  {
+	return $this->db->query("SELECT * FROM app_cor ORDER BY nome_cor ASC")->result();
+  }
+
+  function buscar_tipos()
+  {
+	return $this->db->query("SELECT * FROM app_tipo_produto ORDER BY nome_tipo ASC")->result();
+  }
+
+  function buscar_linhas()
+  {
+	return $this->db->query("SELECT * FROM app_linha ORDER BY nome_linha ASC")->result();
+  }
+
+  function buscar_mecanicas()
+  {
+	return $this->db->query("SELECT * FROM app_filtragem_mecanica ORDER BY nome_filtragem ASC")->result();
+  }
+
+  function buscar_quimicas()
+  {
+	return $this->db->query("SELECT * FROM app_filtragem_quimica ORDER BY nome_filtragem ASC")->result();
+  }
+
 }

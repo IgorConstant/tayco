@@ -55,6 +55,25 @@ class Site_model extends CI_Model
         $this->db->where('id', $id);
         return $this->db->get('app_blog')->result();
     }
+
+    public function buscar_cores_produto( $id )
+    {
+        $q = $this->db->query("SELECT GROUP_CONCAT(`nome_cor` separator ', ') AS cores FROM app_cor WHERE id IN (SELECT cor_id FROM app_produto_tem_cor WHERE produto_id = $id)")->row();
+        return $q->cores;
+    }
+
+    public function buscar_linhas_produto( $id )
+    {
+        $q = $this->db->query("SELECT GROUP_CONCAT(`nome_linha` separator ', ') AS linhas FROM app_linha WHERE id IN (SELECT linha_id FROM app_produto_tem_linha WHERE produto_id = $id)")->row();
+        return $q->linhas;
+    }
+
+
+    public function buscar_mecanicas_produto( $id )
+    {
+        $q = $this->db->query("SELECT GROUP_CONCAT(`nome_filtragem` separator ', ') AS mecanicas FROM app_filtragem_mecanica WHERE id IN (SELECT filtragem_id FROM app_produto_tem_filtragem_mecanica WHERE produto_id = $id)")->row();
+        return $q->mecanicas;
+    }
 }
 
 /* End of file ModelName.php */
