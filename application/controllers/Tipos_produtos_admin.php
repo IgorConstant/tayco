@@ -56,7 +56,7 @@ class Tipos_produtos_admin extends CI_Controller
 
 
             $this->tipos_produtos_model->adicionar($inputAddAcessorio);
-            $this->session->set_flashdata('msg', '<div class="alert alert-success">Acessório adicionado com sucesso!</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-success">Adicionado com sucesso!</div>');
             redirect('tipos_produtos_admin', 'refresh');
             
         } else {
@@ -109,18 +109,18 @@ class Tipos_produtos_admin extends CI_Controller
     {
 
         if (!$id) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Você deve selecionar um Acessório</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Você deve selecionar um objeto</div>');
             redirect('tipos_produtos_admin', 'refresh');
         }
 
         $query = $this->tipos_produtos_model->getById($id);
 
         if (!$query) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Acessório não encontrado</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Objeto não encontrado</div>');
         }
 
         $this->tipos_produtos_model->deletar($query->id);
-        $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Acessório Apagado com Sucesso!</div>');
+        $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Objeto Apagado com Sucesso!</div>');
         redirect('tipos_produtos_admin', 'refresh');
     }
 }

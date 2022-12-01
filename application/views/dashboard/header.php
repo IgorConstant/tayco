@@ -79,6 +79,9 @@
                             <?php echo anchor('filtragens_mecanicas_admin', '<span><i class="fas fa-laptop-code"></i> Filtragens Mecânicas</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
+                            <?php echo anchor('filtragens_quimicas_admin', '<span><i class="fas fa-laptop-code"></i> Filtragens Químicas</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
                             <?php echo anchor('galeria', '<span><i class="fas fa-laptop-code"></i> Galeria</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">

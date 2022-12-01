@@ -13,27 +13,27 @@
     </section>
 
     <div class="row">
-        <div class="col-12 col-sm-12">
-            <form action="linhas_admin/editar/<?php echo ($query->id) ?>" method="POST">
+        <div class="col-12 col-sm-12 mb-4">
+            <form action="" method="post">
                 <div class="row">
                     <div class="col-4">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" value="<?php echo ($query->nome_filtragem) ?>">
+                            <input type="text" class="form-control" id="nome" name="nome">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug" value="<?php echo ($query->slug) ?>">
+                            <input type="text" class="form-control" id="slug" name="slug">
                         </div>
                     </div>
-                    <div class="col-12 mt-3 mb-4">
-                        <input type="hidden" id="id" name="id" value="<?= $query->id ?>">
-                        <button type="submit" class="btn btn-success w-100">Editar</button>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success mt-3 mb-3 w-100">Adicionar</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
 </main>
