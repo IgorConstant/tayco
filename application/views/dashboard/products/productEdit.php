@@ -35,7 +35,7 @@
 				<option value="" selected disabled> Selecione uma ou várias</option>
 				<?php
 					foreach( $cores AS $cor ){
-						$qtd = $this->produto_tem_cor_model->verificar_cor_pertence_produto($query->id, $cor->id);
+						$qtd = $this->produto_tem_cor_model->verificar_pertence_produto($query->id, $cor->id);
 						if( $qtd > 0 ){
 							echo "<option value=\"$cor->id\" selected>$cor->nome_cor</option>";
 						}
@@ -61,8 +61,21 @@
           </div>
           <div class="col-3">
             <div class="mb-3">
-              <label for="linhaProduto" class="form-label">Linha do Produto</label>
-              <input type="text" class="form-control" id="linhaProduto" name="linhaProduto" value="<?php echo $query->linha ?>">
+              <label for="corProduto" class="form-label">Linhas do Produto</label>
+              <select class="form-control" name="linhas[]" id="linha" multiple>
+				<option value="" selected disabled> Selecione uma ou várias</option>
+				<?php
+					foreach( $linhas AS $lin ){
+						$qtd = $this->produto_tem_linha_model->verificar_pertence_produto($query->id, $lin->id);
+						if( $qtd > 0 ){
+							echo "<option value=\"$lin->id\" selected>$lin->nome_linha</option>";
+						}
+						else {
+							echo "<option value=\"$lin->id\">$lin->nome_linha</option>";
+						}
+					}
+				?>
+              </select>
             </div>
           </div>
           <div class="col-3">

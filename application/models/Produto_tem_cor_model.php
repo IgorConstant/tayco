@@ -19,7 +19,7 @@ class Produto_tem_cor_model extends CI_Model
     }
 
 
-    public function verificar_cor_pertence_produto( $produto, $cor )
+    public function verificar_pertence_produto( $produto, $cor )
     {
         $q = $this->db->query("SELECT COUNT(*) AS qtd FROM app_produto_tem_cor WHERE produto_id = $produto AND cor_id = $cor")->row();
         return $q->qtd;

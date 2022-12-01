@@ -50,7 +50,7 @@ class Produtos_admin extends CI_Controller
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
         $this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
         $this->form_validation->set_rules('descCurta', 'Descrição Curta', 'required', array('required' => 'O Campo Descrição Curta é obrigatório'));
-        $this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
+        //$this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
 
         if ($this->form_validation->run() == TRUE) {
 
@@ -138,17 +138,27 @@ class Produtos_admin extends CI_Controller
             }
 
             $this->produtos_model->addProduto($data);
-
+            $produto_id = $this->db->insert_id();//pegando o último id inserido na tabela de produtos
 
             //Salvando a relação produto x cor
             if( $this->input->post('cores') ){
 
                 $this->load->model('produto_tem_cor_model');
 
-                $produto_id = $this->db->insert_id();//pegando o último id inserido na tabela de produtos
-
                 foreach( $this->input->post('cores') AS $cor ){
                     $this->produto_tem_cor_model->salvar($produto_id, $cor);
+                }
+
+            }
+
+
+            //Salvando a relação produto x linha
+            if( $this->input->post('linhas') ){
+
+                $this->load->model('produto_tem_linha_model');
+
+                foreach( $this->input->post('linhas') AS $lin ){
+                    $this->produto_tem_linha_model->salvar($produto_id, $lin);
                 }
 
             }
@@ -163,8 +173,11 @@ class Produtos_admin extends CI_Controller
             $data['titulo_pagina'] = 'Novo produto';
 
             $this->load->model('cores_model');
+            $this->load->model('linhas_model');
             $this->load->model('produto_tem_cor_model');
-            $data['cores'] = $this->cores_model->listar();
+            $this->load->model('produto_tem_linha_model');
+            $data['cores']  = $this->cores_model->listar();
+            $data['linhas'] = $this->linhas_model->listar();
 
             //Load dos arquivos de layout
             $this->load->view('dashboard/header', $data);
@@ -187,7 +200,7 @@ class Produtos_admin extends CI_Controller
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
         $this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
         $this->form_validation->set_rules('descCurta', 'Descrição Curta', 'required', array('required' => 'O Campo Descrição Curta é obrigatório'));
-        $this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
+        //$this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
 
 
         if ($this->form_validation->run() == TRUE) {
@@ -288,14 +301,30 @@ class Produtos_admin extends CI_Controller
             }
 
 
+            //Salvando a relação produto x linha
+            if( $this->input->post('linhas') ){
+
+                $this->load->model('produto_tem_linha_model');
+                $this->produto_tem_linha_model->limpar_por_produto($this->input->post('idProduto'));
+
+                foreach( $this->input->post('linhas') AS $lin ){
+                    $this->produto_tem_linha_model->salvar($this->input->post('idProduto'), $lin);
+                }
+
+            }
+
+
 
             $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Produto atualizado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
         } else {
 
             $this->load->model('cores_model');
+            $this->load->model('linhas_model');
             $this->load->model('produto_tem_cor_model');
-            $data['cores'] = $this->cores_model->listar();
+            $this->load->model('produto_tem_linha_model');
+            $data['cores']  = $this->cores_model->listar();
+            $data['linhas'] = $this->linhas_model->listar();
 
             $data['query'] = $query;
             $data['titulo_pagina'] = 'Editar produto';

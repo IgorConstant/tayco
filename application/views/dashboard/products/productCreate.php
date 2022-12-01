@@ -55,8 +55,15 @@
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
-                            <label for="linhaProduto" class="form-label">Linha do Produto</label>
-                            <input type="text" class="form-control" id="linhaProduto" name="linhaProduto">
+                        <label for="corProduto" class="form-label">Linhas do Produto</label>
+                        <select class="form-control" name="linhas[]" id="linha" multiple>
+                            <option value="" selected disabled> Selecione uma ou várias</option>
+                            <?php
+                                foreach( $linhas AS $lin ){
+                                    echo "<option value=\"$lin->id\">$lin->nome_linha</option>";
+                                }
+                            ?>
+                        </select>
                         </div>
                     </div>
                     <div class="col-3">
