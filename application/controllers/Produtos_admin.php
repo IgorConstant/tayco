@@ -176,6 +176,18 @@ class Produtos_admin extends CI_Controller
             }
 
 
+            //Salvando a relação produto x filtragem química
+            if( $this->input->post('quimicas') ){
+
+                $this->load->model('produto_tem_filtragem_quimica_model');
+
+                foreach( $this->input->post('quimicas') AS $qui ){
+                    $this->produto_tem_filtragem_quimica_model->salvar($produto_id, $qui);
+                }
+
+            }
+
+
             $this->session->set_flashdata('msg', '<div class="alert alert-success">Produto adicionado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
         } else {
@@ -187,9 +199,11 @@ class Produtos_admin extends CI_Controller
             $this->load->model('cores_model');
             $this->load->model('linhas_model');
             $this->load->model('tipos_produtos_model');
-            $data['cores']  = $this->cores_model->listar();
-            $data['linhas'] = $this->linhas_model->listar();
-            $data['tipos']  = $this->tipos_produtos_model->listar();
+            $this->load->model('filtragens_quimicas_model');
+            $data['cores']      = $this->cores_model->listar();
+            $data['linhas']     = $this->linhas_model->listar();
+            $data['tipos']      = $this->tipos_produtos_model->listar();
+            $data['quimicas']   = $this->filtragens_quimicas_model->listar();
 
             //Load dos arquivos de layout
             $this->load->view('dashboard/header', $data);
@@ -339,6 +353,19 @@ class Produtos_admin extends CI_Controller
             }
 
 
+            //Salvando a relação produto x filtragem quimica
+            if( $this->input->post('quimicas') ){
+
+                $this->load->model('produto_tem_filtragem_quimica_model');
+                $this->produto_tem_filtragem_quimica_model->limpar_por_produto($this->input->post('idProduto'));
+
+                foreach( $this->input->post('quimicas') AS $qui ){
+                    $this->produto_tem_filtragem_quimica_model->salvar($this->input->post('idProduto'), $qui);
+                }
+
+            }
+
+
 
             $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Produto atualizado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
@@ -347,12 +374,15 @@ class Produtos_admin extends CI_Controller
             $this->load->model('cores_model');
             $this->load->model('linhas_model');
             $this->load->model('tipos_produtos_model');
+            $this->load->model('filtragens_quimicas_model');
             $this->load->model('produto_tem_cor_model');
             $this->load->model('produto_tem_linha_model');
             $this->load->model('produto_tem_tipo_produto_model');
-            $data['cores']  = $this->cores_model->listar();
-            $data['linhas'] = $this->linhas_model->listar();
-            $data['tipos']  = $this->tipos_produtos_model->listar();
+            $this->load->model('produto_tem_filtragem_quimica_model');
+            $data['cores']      = $this->cores_model->listar();
+            $data['linhas']     = $this->linhas_model->listar();
+            $data['tipos']      = $this->tipos_produtos_model->listar();
+            $data['quimicas']   = $this->filtragens_quimicas_model->listar();
 
             $data['query'] = $query;
             $data['titulo_pagina'] = 'Editar produto';

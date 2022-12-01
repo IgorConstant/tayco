@@ -109,6 +109,26 @@
               </select>
             </div>
           </div>
+
+		<div class="col-3">
+            <div class="mb-3">
+              <label for="corProduto" class="form-label">Filtragens Químicas</label>
+              <select class="form-control" name="quimicas[]" id="quimicas" multiple>
+				<option value="" selected disabled> Selecione uma ou várias</option>
+				<?php
+					foreach( $quimicas AS $qui ){
+						$qtd = $this->produto_tem_filtragem_quimica_model->verificar_pertence_produto($query->id, $qui->id);
+						if( $qtd > 0 ){
+							echo "<option value=\"$qui->id\" selected>$qui->nome_filtragem</option>";
+						}
+						else {
+							echo "<option value=\"$qui->id\">$qui->nome_filtragem</option>";
+						}
+					}
+				?>
+              </select>
+            </div>
+          </div>
           <div class="col-12">
             <div class="mb-4">
               <label for="editor1" class="form-label">Descrição do Produto</label>
