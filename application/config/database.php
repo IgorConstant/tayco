@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -75,10 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? '127.0.0.1' : 'localhost',
-	'username' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? 'zanotta' : 'agen4830_igor',
-	'password' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? '123' : 'Hdes75995715',
-	'database' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? 'tayco' : 'agen4830_taycoci',
+	//'hostname' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? '127.0.0.1' : 'localhost',
+	//'username' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? 'zanotta' : 'agen4830_igor',
+	//'password' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? '123' : 'Hdes75995715',
+	//'database' => in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? 'tayco' : 'agen4830_taycoci',
+
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'db_tayco',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
