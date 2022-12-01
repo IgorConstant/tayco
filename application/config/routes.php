@@ -59,10 +59,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['produtos'] = "Site/Produtos/";
 $route['produtos/:any'] = "Site/view";
 
-
+$route['blog'] = "Site/Blog/";
+$route['blog/:any'] = "Site/viewblog";
 
 $route['contato'] = "Site/Contato";
-$route['blog'] = "Site/Blog/";
-$route['blog/view/(.+)'] = "Site/ViewBlog/$1";
 $route['sobre-nos'] = "Site/Sobre";
 $route['acessorios/view/(.+)'] = "Site/ViewAcessorios/$1";
