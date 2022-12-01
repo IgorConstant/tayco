@@ -132,9 +132,47 @@ class Filter_model extends CI_Model
 
   function count_all($categoria, $cor, $tamanho, $classe, $linha, $quimico)
   {
-    $query = $this->make_query($categoria, $cor, $tamanho, $classe, $linha);
-    $data = $this->db->query($query);
-    return $data->num_rows();
+    
+
+	$query = "SELECT COUNT(*) AS qtd FROM app_product t1 WHERE id IS NOT NULL";
+    
+    if( is_array($categoria) ){
+        $cat     = implode(',', $categoria);
+        $query 	.= " AND t1.id IN (SELECT produto_id FROM app_produto_tem_tipo_produto WHERE tipo_id IN($cat))";
+    }
+
+    if( is_array($cor) ){
+      $cor    	 = implode(',', $cor);
+      $query 	.= " AND t1.id IN (SELECT produto_id FROM app_produto_tem_cor WHERE cor_id IN($cor))";
+    }
+
+    if( is_array($classe) ){
+      $classe 	 = implode(',', $classe);
+      $query 	.= " AND t1.id IN (SELECT produto_id FROM app_produto_tem_filtragem_mecanica WHERE filtragem_id IN($classe))";
+    }
+
+	if( is_array($quimico) ){
+		$quimico 	 = implode(',', $quimico);
+		$query 	.= " AND t1.id IN (SELECT produto_id FROM app_produto_tem_filtragem_quimica WHERE filtragem_id IN($quimico))";
+	}
+
+
+	if( is_array($linha) ){
+		$linha 	 = implode(',', $linha);
+		$query 	.= " AND t1.id IN (SELECT produto_id FROM app_produto_tem_linha WHERE linha_id IN($linha))";
+	}
+
+
+	if (isset($tamanho)) {
+		$tamanho_filter = implode("','", $tamanho);
+		$query .= "
+		 AND tamanho IN('" . $tamanho_filter . "')
+		";
+	  }
+
+	  $data = $this->db->query($query);
+
+    return $data->row()->qtd;
   }
 
   function buscar_cores()
