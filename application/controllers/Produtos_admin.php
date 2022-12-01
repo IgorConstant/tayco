@@ -41,9 +41,10 @@ class Produtos_admin extends CI_Controller
     public function adicionarprodutos()
     {
 
+
         $this->form_validation->set_rules('nomeProduto', 'Nome Produto', 'required', array('required' => 'O Campo Nome do Produto é obrigatório'));
         $this->form_validation->set_rules('descProduto', 'Descrição', 'required', array('required' => 'O Campo Descrição é obrigatório'));
-        $this->form_validation->set_rules('corProduto', 'Cor', 'required', array('required' => 'O Campo Cor é obrigatório'));
+        //$this->form_validation->set_rules('corProduto', 'Cor', 'required', array('required' => 'O Campo Cor é obrigatório'));
         $this->form_validation->set_rules('slugProduto', 'Slug', 'required', array('required' => 'O Campo Slug é obrigatório'));
         $this->form_validation->set_rules('tamProduto', 'Tamanho', 'required', array('required' => 'O Campo Tamanho é obrigatório'));
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
@@ -137,6 +138,22 @@ class Produtos_admin extends CI_Controller
             }
 
             $this->produtos_model->addProduto($data);
+
+
+            //Salvando a relação produto x cor
+            if( $this->input->post('cores') ){
+
+                $this->load->model('produto_tem_cor_model');
+
+                $produto_id = $this->db->insert_id();//pegando o último id inserido na tabela de produtos
+
+                foreach( $this->input->post('cores') AS $cor ){
+                    $this->produto_tem_cor_model->salvar($produto_id, $cor);
+                }
+
+            }
+
+
             $this->session->set_flashdata('msg', '<div class="alert alert-success">Produto adicionado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
         } else {
@@ -144,6 +161,10 @@ class Produtos_admin extends CI_Controller
             //Titulo
             $data['titulo_site'] = 'Gerenciador de Conteúdo';
             $data['titulo_pagina'] = 'Novo produto';
+
+            $this->load->model('cores_model');
+            $this->load->model('produto_tem_cor_model');
+            $data['cores'] = $this->cores_model->listar();
 
             //Load dos arquivos de layout
             $this->load->view('dashboard/header', $data);
@@ -154,13 +175,13 @@ class Produtos_admin extends CI_Controller
 
     public function editarproduto($id = NULL)
     {
-
+        
         $query = $this->produtos_model->getprodutoID($id);
 
 
         $this->form_validation->set_rules('nomeProduto', 'Nome Produto', 'required', array('required' => 'O Campo Nome do Produto é obrigatório'));
         $this->form_validation->set_rules('descProduto', 'Descrição', 'required', array('required' => 'O Campo Descrição é obrigatório'));
-        $this->form_validation->set_rules('corProduto', 'Cor', 'required', array('required' => 'O Campo Cor é obrigatório'));
+        //$this->form_validation->set_rules('corProduto', 'Cor', 'required', array('required' => 'O Campo Cor é obrigatório'));
         $this->form_validation->set_rules('slugProduto', 'Slug', 'required', array('required' => 'O Campo Slug é obrigatório'));
         $this->form_validation->set_rules('tamProduto', 'Tamanho', 'required', array('required' => 'O Campo Tamanho é obrigatório'));
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
@@ -253,10 +274,28 @@ class Produtos_admin extends CI_Controller
             }
 
             $this->produtos_model->atualizarProduto($data, ['id' => $this->input->post('idProduto')]);
-            $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Projeto atualizado com sucesso!</div>');
+            
+            //Salvando a relação produto x cor
+            if( $this->input->post('cores') ){
+
+                $this->load->model('produto_tem_cor_model');
+                $this->produto_tem_cor_model->limpar_por_produto($this->input->post('idProduto'));
+
+                foreach( $this->input->post('cores') AS $cor ){
+                    $this->produto_tem_cor_model->salvar($this->input->post('idProduto'), $cor);
+                }
+
+            }
+
+
+
+            $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Produto atualizado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
         } else {
 
+            $this->load->model('cores_model');
+            $this->load->model('produto_tem_cor_model');
+            $data['cores'] = $this->cores_model->listar();
 
             $data['query'] = $query;
             $data['titulo_pagina'] = 'Editar produto';

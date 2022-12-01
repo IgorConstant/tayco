@@ -30,8 +30,15 @@
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
-                            <label for="corProduto" class="form-label">Cor do Produto</label>
-                            <input type="text" class="form-control" id="corProduto" name="corProduto">
+                            <label for="corProduto" class="form-label">Cores do Produto</label>
+                            <select class="form-control" name="cores[]" id="cor" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                    foreach( $cores AS $cor ){
+                                        echo "<option value=\"$cor->id\">$cor->nome_cor</option>";
+                                    }
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <div class="col-3">
