@@ -114,20 +114,16 @@ class Site extends CI_Controller
     public function View()
     {
 
-        $slug = $this->uri->segment(2);
+        $data['titulo']             = 'Tayco - Produtos';
+        $data['query']              = $this->site_model->getProductBySlug($this->uri->segment(2));
 
-        $data['titulo'] = 'Tayco - Produtos';
+        if( count($data['query']) == 0 ){//Caso não encontre o produto
+            redirect('../produtos');
+        }
 
-        $query  = $this->site_model->getProductBySlug($slug);
-
-        $id     = $query[0]->id;
-
-        $projectGallery = $this->site_model->getGalleryInd($id);
-        $acessories = $this->site_model->getAcessoriesInd($id);
-
-        $data['acessories'] = $acessories;
-        $data['projectGallery'] = $projectGallery;
-        $data['query'] = $query;
+        $id                         = $data['query'][0]->id;
+        $data['acessories']         = $this->site_model->getAcessoriesInd($id);
+        $data['projectGallery']     = $this->site_model->getGalleryInd($id);
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-produto');

@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://agenciaduetto.com.br/tayco-ci';
+$config['base_url'] = in_array(gethostname(), array('JO-TI-09', 'zanotta-pc')) ? 'http://localhost/tayco' : 'http://agenciaduetto.com.br/tayco-ci';
 
 /*
 |--------------------------------------------------------------------------
