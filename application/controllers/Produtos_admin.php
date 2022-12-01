@@ -48,7 +48,7 @@ class Produtos_admin extends CI_Controller
         $this->form_validation->set_rules('slugProduto', 'Slug', 'required', array('required' => 'O Campo Slug é obrigatório'));
         $this->form_validation->set_rules('tamProduto', 'Tamanho', 'required', array('required' => 'O Campo Tamanho é obrigatório'));
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
-        $this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
+        //$this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
         $this->form_validation->set_rules('descCurta', 'Descrição Curta', 'required', array('required' => 'O Campo Descrição Curta é obrigatório'));
         //$this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
 
@@ -238,7 +238,7 @@ class Produtos_admin extends CI_Controller
         $this->form_validation->set_rules('slugProduto', 'Slug', 'required', array('required' => 'O Campo Slug é obrigatório'));
         $this->form_validation->set_rules('tamProduto', 'Tamanho', 'required', array('required' => 'O Campo Tamanho é obrigatório'));
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
-        $this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
+        //$this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
         $this->form_validation->set_rules('descCurta', 'Descrição Curta', 'required', array('required' => 'O Campo Descrição Curta é obrigatório'));
         //$this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
 

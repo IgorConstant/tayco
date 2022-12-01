@@ -55,8 +55,21 @@
           </div>
           <div class="col-3">
             <div class="mb-3">
-              <label for="classeProduto" class="form-label">Classe do Produto</label>
-              <input type="text" class="form-control" id="classeProduto" name="classeProduto" value="<?php echo $query->classe ?>">
+              <label for="corProduto" class="form-label">Tipos de Produto</label>
+              <select class="form-control" name="tipos[]" id="tipo" multiple>
+				<option value="" selected disabled> Selecione uma ou várias</option>
+				<?php
+					foreach( $tipos AS $tipo ){
+						$qtd = $this->produto_tem_tipo_produto_model->verificar_pertence_produto($query->id, $tipo->id);
+						if( $qtd > 0 ){
+							echo "<option value=\"$tipo->id\" selected>$tipo->nome_tipo</option>";
+						}
+						else {
+							echo "<option value=\"$tipo->id\">$tipo->nome_tipo</option>";
+						}
+					}
+				?>
+              </select>
             </div>
           </div>
           <div class="col-3">
@@ -88,25 +101,6 @@
             <div class="mb-3">
               <label for="descCurta" class="form-label">Descrição Curta</label>
               <input type="text" class="form-control" id="descCurta" name="descCurta" value="<?php echo $query->descricao_curta ?>">
-            </div>
-          </div>
-		<div class="col-3">
-            <div class="mb-3">
-              <label for="corProduto" class="form-label">Tipos de Produto</label>
-              <select class="form-control" name="tipos[]" id="tipo" multiple>
-				<option value="" selected disabled> Selecione uma ou várias</option>
-				<?php
-					foreach( $tipos AS $tipo ){
-						$qtd = $this->produto_tem_tipo_produto_model->verificar_pertence_produto($query->id, $tipo->id);
-						if( $qtd > 0 ){
-							echo "<option value=\"$tipo->id\" selected>$tipo->nome_tipo</option>";
-						}
-						else {
-							echo "<option value=\"$tipo->id\">$tipo->nome_tipo</option>";
-						}
-					}
-				?>
-              </select>
             </div>
           </div>
 
