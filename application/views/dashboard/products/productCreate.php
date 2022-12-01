@@ -30,51 +30,6 @@
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
-                            <label for="corProduto" class="form-label">Cores do Produto</label>
-                            <select class="form-control" name="cores[]" id="cor" multiple>
-                                <option value="" selected disabled> Selecione uma ou várias</option>
-                                <?php
-                                    foreach( $cores AS $cor ){
-                                        echo "<option value=\"$cor->id\">$cor->nome_cor</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label for="tamProduto" class="form-label">Tamanho do Produto</label>
-                            <input type="text" class="form-control" id="tamProduto" name="tamProduto">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                        <label for="corProduto" class="form-label">Tipos de Produto</label>
-                        <select class="form-control" name="tipos[]" id="tipo" multiple>
-                            <option value="" selected disabled> Selecione uma ou várias</option>
-                            <?php
-                                foreach( $tipos AS $tipo ){
-                                    echo "<option value=\"$tipo->id\">$tipo->nome_tipo</option>";
-                                }
-                            ?>
-                        </select>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                        <label for="corProduto" class="form-label">Linhas do Produto</label>
-                        <select class="form-control" name="linhas[]" id="linha" multiple>
-                            <option value="" selected disabled> Selecione uma ou várias</option>
-                            <?php
-                                foreach( $linhas AS $lin ){
-                                    echo "<option value=\"$lin->id\">$lin->nome_linha</option>";
-                                }
-                            ?>
-                        </select>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
                             <label for="slugProduto" class="form-label">Slug</label>
                             <input type="text" class="form-control" id="slugProduto" name="slugProduto">
                         </div>
@@ -85,31 +40,76 @@
                             <input type="text" class="form-control" id="descCurta" name="descCurta">
                         </div>
                     </div>
-                    
                     <div class="col-3">
                         <div class="mb-3">
-                        <label for="corProduto" class="form-label">Filtragens Químicas</label>
-                        <select class="form-control" name="quimicas[]" id="quimicas" multiple>
-                            <option value="" selected disabled> Selecione uma ou várias</option>
-                            <?php
-                                foreach( $quimicas AS $qui ){
-                                    echo "<option value=\"$qui->id\">$qui->nome_filtragem</option>";
+                            <label for="corProduto" class="form-label">Cores do Produto</label>
+                            <select class="form-control" name="cores[]" id="cor" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                foreach ($cores as $cor) {
+                                    echo "<option value=\"$cor->id\">$cor->nome_cor</option>";
                                 }
-                            ?>
-                        </select>
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
-                        <label for="corProduto" class="form-label">Filtragens Mecânicas</label>
-                        <select class="form-control" name="mecanicas[]" id="mecanicas" multiple>
-                            <option value="" selected disabled> Selecione uma ou várias</option>
-                            <?php
-                                foreach( $mecanicas AS $mec ){
+                            <label for="corProduto" class="form-label">Tipos de Produto</label>
+                            <select class="form-control" name="tipos[]" id="tipo" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                foreach ($tipos as $tipo) {
+                                    echo "<option value=\"$tipo->id\">$tipo->nome_tipo</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="corProduto" class="form-label">Linhas do Produto</label>
+                            <select class="form-control" name="linhas[]" id="linha" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                foreach ($linhas as $lin) {
+                                    echo "<option value=\"$lin->id\">$lin->nome_linha</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="corProduto" class="form-label">Filtragens Químicas</label>
+                            <select class="form-control" name="quimicas[]" id="quimicas" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                foreach ($quimicas as $qui) {
+                                    echo "<option value=\"$qui->id\">$qui->nome_filtragem</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="corProduto" class="form-label">Filtragens Mecânicas</label>
+                            <select class="form-control" name="mecanicas[]" id="mecanicas" multiple>
+                                <option value="" selected disabled> Selecione uma ou várias</option>
+                                <?php
+                                foreach ($mecanicas as $mec) {
                                     echo "<option value=\"$mec->id\">$mec->nome_filtragem</option>";
                                 }
-                            ?>
-                        </select>
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="tamProduto" class="form-label">Tamanho do Produto</label>
+                            <input type="text" class="form-control" id="tamProduto" name="tamProduto">
                         </div>
                     </div>
                     <div class="col-12">
