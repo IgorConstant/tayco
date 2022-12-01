@@ -78,6 +78,19 @@
                             <input type="text" class="form-control" id="descCurta" name="descCurta">
                         </div>
                     </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                        <label for="corProduto" class="form-label">Tipos de Produto</label>
+                        <select class="form-control" name="tipos[]" id="tipo" multiple>
+                            <option value="" selected disabled> Selecione uma ou várias</option>
+                            <?php
+                                foreach( $tipos AS $tipo ){
+                                    echo "<option value=\"$tipo->id\">$tipo->nome_tipo</option>";
+                                }
+                            ?>
+                        </select>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="mb-4">
                             <label for="editor1" class="form-label">Descrição do Produto</label>

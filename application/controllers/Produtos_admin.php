@@ -164,6 +164,18 @@ class Produtos_admin extends CI_Controller
             }
 
 
+            //Salvando a relação produto x tipo
+            if( $this->input->post('tipos') ){
+
+                $this->load->model('produto_tem_tipo_produto_model');
+
+                foreach( $this->input->post('tipos') AS $tipo ){
+                    $this->produto_tem_tipo_produto_model->salvar($produto_id, $tipo);
+                }
+
+            }
+
+
             $this->session->set_flashdata('msg', '<div class="alert alert-success">Produto adicionado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
         } else {
@@ -174,10 +186,10 @@ class Produtos_admin extends CI_Controller
 
             $this->load->model('cores_model');
             $this->load->model('linhas_model');
-            $this->load->model('produto_tem_cor_model');
-            $this->load->model('produto_tem_linha_model');
+            $this->load->model('tipos_produtos_model');
             $data['cores']  = $this->cores_model->listar();
             $data['linhas'] = $this->linhas_model->listar();
+            $data['tipos']  = $this->tipos_produtos_model->listar();
 
             //Load dos arquivos de layout
             $this->load->view('dashboard/header', $data);
@@ -314,6 +326,19 @@ class Produtos_admin extends CI_Controller
             }
 
 
+            //Salvando a relação produto x tipos
+            if( $this->input->post('tipos') ){
+
+                $this->load->model('produto_tem_tipo_produto_model');
+                $this->produto_tem_tipo_produto_model->limpar_por_produto($this->input->post('idProduto'));
+
+                foreach( $this->input->post('tipos') AS $tipo ){
+                    $this->produto_tem_tipo_produto_model->salvar($this->input->post('idProduto'), $tipo);
+                }
+
+            }
+
+
 
             $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Produto atualizado com sucesso!</div>');
             redirect('produtos_admin', 'refresh');
@@ -321,10 +346,13 @@ class Produtos_admin extends CI_Controller
 
             $this->load->model('cores_model');
             $this->load->model('linhas_model');
+            $this->load->model('tipos_produtos_model');
             $this->load->model('produto_tem_cor_model');
             $this->load->model('produto_tem_linha_model');
+            $this->load->model('produto_tem_tipo_produto_model');
             $data['cores']  = $this->cores_model->listar();
             $data['linhas'] = $this->linhas_model->listar();
+            $data['tipos']  = $this->tipos_produtos_model->listar();
 
             $data['query'] = $query;
             $data['titulo_pagina'] = 'Editar produto';
