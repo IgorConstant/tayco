@@ -169,16 +169,12 @@ class Site extends CI_Controller
     }
 
 
-    public function viewAcessorios($id)
+    public function viewAcessorios()
     {
 
         $data['titulo'] = 'Tayco - Acessórios';
 
-        $query = $this->site_model->getAcessoriesInd($id);
-        $page = $this->site_model->pageAcessories($id);
-
-        $data['query'] = $query;
-        $data['page'] = $page;
+        $data['query']              = $this->site_model->getAcessoriesBySlug($this->uri->segment(2));
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-acessorios');
