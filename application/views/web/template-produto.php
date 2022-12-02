@@ -147,27 +147,29 @@
   </div>
 </section>
 
-<section id="acessories">
-  <div class="uk-container uk-container-xlarge">
-    <div class="titleBlock">
-      <h6>Acessórios</h6>
-      <hr />
-    </div>
+<?php if( count($acessories) > 0 ){ ?>
+  <section id="acessories">
+    <div class="uk-container uk-container-xlarge">
+      <div class="titleBlock">
+        <h6>Acessórios</h6>
+        <hr />
+      </div>
 
-    <div id="homeProducts" class="owl-carousel owl-theme">
-      <?php foreach ($acessories as $a) { ?>
-        <div class="item">
-          <a href="<?= base_url("acessorios/view/" . $a->id . "/" . $a->slug) ?>">
-            <div class="uk-card uk-card-default uk-card-body">
-              <img src="<?php echo base_url("upload/produtos/") ?><?php echo $a->imagem; ?>" alt="<?= $a->nome_acessorio ?>">
-            </div>
-            <p class="titleAcessorio"><?= $a->nome_acessorio ?></p>
-          </a>
-        </div>
-      <?php } ?>
+      <div id="homeProducts" class="owl-carousel owl-theme">
+        <?php foreach ($acessories as $a) { ?>
+          <div class="item">
+            <a href="<?= base_url("acessorios/view/" . $a->id . "/" . $a->slug) ?>">
+              <div class="uk-card uk-card-default uk-card-body">
+                <img src="<?php echo base_url("upload/produtos/") ?><?php echo $a->imagem; ?>" alt="<?= $a->nome_acessorio ?>">
+              </div>
+              <p class="titleAcessorio"><?= $a->nome_acessorio ?></p>
+            </a>
+          </div>
+        <?php } ?>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+<?php } ?>
 
 <section id="contentContacts">
   <div class="uk-container">
