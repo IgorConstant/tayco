@@ -159,11 +159,12 @@
         <?php foreach ($acessories as $a) { ?>
           <div class="item">
             <a href="<?= base_url("acessorios/" . $a->slug) ?>">
-              <div class="uk-card uk-card-default uk-card-body">
-                <img src="<?php echo base_url("upload/produtos/") ?><?php echo $a->imagem; ?>" alt="<?= $a->nome_acessorio ?>">
-              </div>
-              <p class="titleAcessorio"><?= $a->nome_acessorio ?></p>
-            </a>
+              <a href="<?= base_url("acessorios/" . $a->slug) ?>">
+                <div class="uk-card uk-card-default uk-card-body">
+                  <img src="<?php echo base_url("upload/produtos/") ?><?php echo $a->imagem; ?>" alt="<?= $a->nome_acessorio ?>">
+                </div>
+                <p class="titleAcessorio"><?= $a->nome_acessorio ?></p>
+              </a>
           </div>
         <?php } ?>
       </div>
