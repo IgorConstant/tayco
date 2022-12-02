@@ -64,4 +64,4 @@ $route['blog/:any'] = "Site/viewblog";
 
 $route['contato'] = "Site/Contato";
 $route['sobre-nos'] = "Site/Sobre";
-$route['acessorios/view/(.+)'] = "Site/ViewAcessorios/$1";
+$route['acessorios/:any'] = "Site/viewacessorios";
