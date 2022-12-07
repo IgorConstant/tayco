@@ -40,7 +40,7 @@
           <div id="modal-media-youtube" class="uk-flex-top" uk-modal>
             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
               <button class="uk-modal-close-outside" type="button" uk-close></button>
-              <iframe width="1280" height="720" src="https://www.youtube.com/embed/2VbwUV_UrSo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen uk-video uk-responsive></iframe>
+              <iframe width="1280" height="720" src="https://www.youtube.com/embed/BDxEm7Q0X8c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen uk-video uk-responsive></iframe>
             </div>
           </div>
         </div>
