@@ -19,7 +19,8 @@ class Site extends CI_Controller
     public function index()
     {
 
-        $data['titulo'] = 'Tayco';
+        $data['titulo'] = 'Tayco - Proteção Respiratória';
+        $data['description'] = 'Há mais de uma década produzimos equipamentos de proteção respiratória de alta qualidade';
         $data['app_home'] = $this->site_model->listarBanners();
         $data['app_product'] = $this->site_model->listarProdutos();
 
@@ -36,6 +37,7 @@ class Site extends CI_Controller
     {
 
         $data['titulo'] = 'Tayco - Produtos';
+        $data['description'] = 'Confira nossas linhas de produtos e conheça seus diferenciais.';
 
         //$data['cor_data'] = $this->filter_model->fetch_filter_type('cor');
         /*;
@@ -107,6 +109,7 @@ class Site extends CI_Controller
     public function Sobre()
     {
         $data['titulo'] = 'Tayco - Sobre';
+        $data['description'] = 'Uma empresa preocupada com sua segurança, saúde e comprometida com a qualidade.';
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/sobre');
@@ -116,6 +119,7 @@ class Site extends CI_Controller
     public function Contato()
     {
         $data['titulo'] = 'Tayco - Contato';
+        $data['description'] = 'Entre em contato conosco e tire suas dúvidas.';
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/contato');
@@ -125,8 +129,9 @@ class Site extends CI_Controller
     public function View()
     {
 
-        $data['titulo']             = 'Tayco - Produtos';
         $data['query']              = $this->site_model->getProductBySlug($this->uri->segment(2));
+        $data['titulo']             = $data['query'][0]->nome . ' - Tayco';
+        $data['description']        = $data['query'][0]->descricao_curta;
 
         if (count($data['query']) == 0) { //Caso não encontre o produto
             redirect('../produtos');
@@ -148,6 +153,7 @@ class Site extends CI_Controller
     public function Blog()
     {
         $data['titulo'] = 'Tayco - Blog';
+        $data['description'] = 'As últimas notícias, você só encontra aqui no Blog da Tayco®, empresa pioneira e absoluta, no Brasil e mundo.';
 
         $data['app_blog'] = $this->site_model->listarPosts();
 
@@ -159,9 +165,10 @@ class Site extends CI_Controller
 
     public function ViewBlog()
     {
-        $data['titulo'] = 'Tayco - Blog';
 
         $data['query']              = $this->site_model->getPostBySlug($this->uri->segment(2));
+        $data['titulo']             = $data['query'][0]->title;
+        $data['description'] = 'Acompanhe as novidades da Tayco.';
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-blog');
@@ -173,6 +180,7 @@ class Site extends CI_Controller
     {
 
         $data['titulo'] = 'Tayco - Acessórios';
+        $data['description'] = 'A Tayco possui uma grande variedade de acessórios para você.';
 
         $data['query']              = $this->site_model->getAcessoriesBySlug($this->uri->segment(2));
 
