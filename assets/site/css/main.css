@@ -8756,9 +8756,10 @@ header .uk-navbar-toggle {
   background-size: cover;
 }
 
-#introAcessorios .titleBlock h6 {
+#introAcessorios .titleBlock h1 {
   text-transform: uppercase;
   margin: 5px 0;
+  font-size: 30px;
 }
 
 #introAcessorios .titleBlock hr {
