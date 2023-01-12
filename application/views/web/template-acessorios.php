@@ -12,7 +12,7 @@
                 <div>
                     <div class="content">
                         <div class="titleBlock">
-                            <h6>Descrição</h6>
+                            <h1>Descrição</h1>
                             <hr />
                         </div>
                         <?php foreach ($query as $p) { ?>
