@@ -33,7 +33,7 @@
                             <label for="nomeProduto" class="form-label">Vincule a um produto</label>
                             <select id="nomeProduto" name="nomeProduto" class="form-select">
                                 <?php foreach ($app_nameproduct as $produtos) { ?>
-                                    <option value="<?= $produtos->id ?>"><?= $produtos->nome ?></option>
+                                    <option value="<?= $produtos->id ?>" selected><?= $produtos->nome ?></option>
                                 <?php } ?>
                             </select>
                         </div>
