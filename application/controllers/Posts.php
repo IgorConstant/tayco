@@ -33,6 +33,8 @@ class Posts extends CI_Controller
         $this->form_validation->set_rules('slugPost', 'SLUG', 'required', array('required' => 'O Campo slug é obrigatório'));
         $this->form_validation->set_rules('categoriaPost', 'CATEGORIA', 'required', array('required' => 'O Campo categoria é obrigatório'));
         $this->form_validation->set_rules('conteudoPost', 'CONTEUDO', 'required', array('required' => 'O Campo conteúdo é obrigatório'));
+        $this->form_validation->set_rules('yoastKeywords', 'KEYWORDS', 'required', array('required' => 'O Campo keywords é obrigatório'));
+        $this->form_validation->set_rules('yoastDescription', 'DESCRIPTION', 'required', array('required' => 'O Campo description é obrigatório'));
 
         if ($this->form_validation->run() == TRUE) {
             $config['upload_path'] = './upload/blog';
@@ -48,6 +50,8 @@ class Posts extends CI_Controller
             } else {
                 $inputAddPost['title'] = $this->input->post('tituloPost');
                 $inputAddPost['slug'] = $this->input->post('slugPost');
+                $inputAddPost['yoast_keywords'] = $this->input->post('yoastKeywords');
+                $inputAddPost['yoast_description'] = $this->input->post('yoastDescription');
                 $inputAddPost['category'] = $this->input->post('categoriaPost');
                 $inputAddPost['content_post'] = $this->input->post('conteudoPost');
                 $inputAddPost['imagem_destaque'] = $this->upload->data('file_name');
@@ -96,6 +100,8 @@ class Posts extends CI_Controller
 
             $inputEditPost['title'] = $this->input->post('tituloPost');
             $inputEditPost['slug'] = $this->input->post('slugPost');
+            $inputEditPost['yoast_keywords'] = $this->input->post('yoastKeywords');
+            $inputEditPost['yoast_description'] = $this->input->post('yoastDescription');
             $inputEditPost['category'] = $this->input->post('categoriaPost');
             $inputEditPost['content_post'] = $this->input->post('conteudoPost');
 

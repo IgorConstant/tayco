@@ -21,6 +21,7 @@ class Site extends CI_Controller
 
         $data['titulo'] = 'Tayco - Proteção Respiratória';
         $data['description'] = 'Há mais de uma década produzimos equipamentos de proteção respiratória de alta qualidade';
+        $data['keywords'] = 'Segurança, PFF1, PFF2, PFF3, Protetor Facial, Respirador Semifacial';
         $data['app_home'] = $this->site_model->listarBanners();
         $data['app_product'] = $this->site_model->listarProdutos();
 
@@ -38,6 +39,7 @@ class Site extends CI_Controller
 
         $data['titulo'] = 'Tayco - Produtos';
         $data['description'] = 'Confira nossas linhas de produtos e conheça seus diferenciais.';
+        $data['keywords'] = 'Segurança, PFF1, PFF2, PFF3, Protetor Facial, Respirador Semifacial';
 
         //$data['cor_data'] = $this->filter_model->fetch_filter_type('cor');
         /*;
@@ -110,6 +112,7 @@ class Site extends CI_Controller
     {
         $data['titulo'] = 'Tayco - Sobre';
         $data['description'] = 'Uma empresa preocupada com sua segurança, saúde e comprometida com a qualidade.';
+        $data['keywords'] = 'Sobre, Tayco, Produtos, Segurança, Saúde, Qualidade';
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/sobre');
@@ -120,6 +123,7 @@ class Site extends CI_Controller
     {
         $data['titulo'] = 'Tayco - Contato';
         $data['description'] = 'Entre em contato conosco e tire suas dúvidas.';
+        $data['keywords'] = 'Contato, Tayco, Produtos, Segurança, Saúde, Qualidade';
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/contato');
@@ -131,7 +135,8 @@ class Site extends CI_Controller
 
         $data['query']              = $this->site_model->getProductBySlug($this->uri->segment(2));
         $data['titulo']             = $data['query'][0]->nome . ' - Tayco';
-        $data['description']        = $data['query'][0]->descricao_curta;
+        $data['description']        = $data['query'][0]->yoast_description;
+        $data['keywords']           = $data['query'][0]->yoast_keywords;
 
         if (count($data['query']) == 0) { //Caso não encontre o produto
             redirect('../produtos');
@@ -154,6 +159,7 @@ class Site extends CI_Controller
     {
         $data['titulo'] = 'Tayco - Blog';
         $data['description'] = 'As últimas notícias, você só encontra aqui no Blog da Tayco®, empresa pioneira e absoluta, no Brasil e mundo.';
+        $data['keywords'] = 'Blog, Tayco, Produtos, Segurança, Saúde, Qualidade';  
 
         $data['app_blog'] = $this->site_model->listarPosts();
 
@@ -168,7 +174,8 @@ class Site extends CI_Controller
 
         $data['query']              = $this->site_model->getPostBySlug($this->uri->segment(2));
         $data['titulo']             = $data['query'][0]->title;
-        $data['description'] = 'Acompanhe as novidades da Tayco.';
+        $data['description']        = $data['query'][0]->yoast_description;
+        $data['keywords']           = $data['query'][0]->yoast_keywords;
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-blog');
@@ -179,10 +186,11 @@ class Site extends CI_Controller
     public function viewAcessorios()
     {
 
-        $data['titulo'] = 'Tayco - Acessórios';
-        $data['description'] = 'A Tayco possui uma grande variedade de acessórios para você.';
-
         $data['query']              = $this->site_model->getAcessoriesBySlug($this->uri->segment(2));
+        $data['titulo']             = $data['query'][0]->nome_acessorio . ' - Tayco';
+        $data['description']        = $data['query'][0]->yoast_description;
+        $data['keywords']           = $data['query'][0]->yoast_keywords;
+
 
         $this->load->view('web/layout/header', $data);
         $this->load->view('web/template-acessorios');

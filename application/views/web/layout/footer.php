@@ -19,9 +19,9 @@
                 <div>
                     <div class="socialIcons">
                         <ul>
-                            <li><a href="" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="https://pt-br.facebook.com/taycorespiradoresdescartaveis/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="https://www.instagram.com/taycoind/" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
+                            <li><a href="https://br.linkedin.com/company/taycoind" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>

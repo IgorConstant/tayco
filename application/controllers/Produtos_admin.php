@@ -50,6 +50,8 @@ class Produtos_admin extends CI_Controller
         $this->form_validation->set_rules('catProduto', 'Categoria', 'required', array('required' => 'O Campo Categoria é obrigatório'));
         //$this->form_validation->set_rules('classeProduto', 'Classe', 'required', array('required' => 'O Campo Classe é obrigatório'));
         $this->form_validation->set_rules('descCurta', 'Descrição Curta', 'required', array('required' => 'O Campo Descrição Curta é obrigatório'));
+        $this->form_validation->set_rules('yoastKeywords', 'Keywords', 'required', array('required' => 'O Campo keywords é obrigatório'));
+        $this->form_validation->set_rules('yoastDescription', 'Description', 'required', array('required' => 'O Campo description é obrigatório'));
         //$this->form_validation->set_rules('linhaProduto', 'Linha', 'required', array('required' => 'O Campo Linha é obrigatório'));
 
         if ($this->form_validation->run() == TRUE) {
@@ -63,6 +65,8 @@ class Produtos_admin extends CI_Controller
             $data['categoria'] = $this->input->post('catProduto');
             $data['classe'] = $this->input->post('classeProduto');
             $data['linha'] = $this->input->post('linhaProduto');
+            $data['yoast_description'] = $this->input->post('yoastDescription');
+            $data['yoast_keywords'] = $this->input->post('yoastKeywords');
             $data['descricao_curta'] = $this->input->post('descCurta');
 
 
@@ -138,65 +142,60 @@ class Produtos_admin extends CI_Controller
             }
 
             $this->produtos_model->addProduto($data);
-            $produto_id = $this->db->insert_id();//pegando o último id inserido na tabela de produtos
+            $produto_id = $this->db->insert_id(); //pegando o último id inserido na tabela de produtos
 
             //Salvando a relação produto x cor
-            if( $this->input->post('cores') ){
+            if ($this->input->post('cores')) {
 
                 $this->load->model('produto_tem_cor_model');
 
-                foreach( $this->input->post('cores') AS $cor ){
+                foreach ($this->input->post('cores') as $cor) {
                     $this->produto_tem_cor_model->salvar($produto_id, $cor);
                 }
-
             }
 
 
             //Salvando a relação produto x linha
-            if( $this->input->post('linhas') ){
+            if ($this->input->post('linhas')) {
 
                 $this->load->model('produto_tem_linha_model');
 
-                foreach( $this->input->post('linhas') AS $lin ){
+                foreach ($this->input->post('linhas') as $lin) {
                     $this->produto_tem_linha_model->salvar($produto_id, $lin);
                 }
-
             }
 
 
             //Salvando a relação produto x tipo
-            if( $this->input->post('tipos') ){
+            if ($this->input->post('tipos')) {
 
                 $this->load->model('produto_tem_tipo_produto_model');
 
-                foreach( $this->input->post('tipos') AS $tipo ){
+                foreach ($this->input->post('tipos') as $tipo) {
                     $this->produto_tem_tipo_produto_model->salvar($produto_id, $tipo);
                 }
-
             }
 
 
             //Salvando a relação produto x filtragem química
-            if( $this->input->post('quimicas') ){
+            if ($this->input->post('quimicas')) {
 
                 $this->load->model('produto_tem_filtragem_quimica_model');
 
-                foreach( $this->input->post('quimicas') AS $qui ){
+                foreach ($this->input->post('quimicas') as $qui) {
                     $this->produto_tem_filtragem_quimica_model->salvar($produto_id, $qui);
                 }
-
             }
 
 
             //Salvando a relação produto x filtragem mecânica
-            if( $this->input->post('mecanicas') ){
+            if ($this->input->post('mecanicas')) {
 
                 $this->load->model('produto_tem_filtragem_mecanica_model');
 
-                foreach( $this->input->post('mecanicas') AS $mec ){
+                foreach ($this->input->post('mecanicas') as $mec) {
                     $this->produto_tem_filtragem_mecanica_model->salvar($produto_id, $mec);
                 }
-
             }
 
 
@@ -228,7 +227,7 @@ class Produtos_admin extends CI_Controller
 
     public function editarproduto($id = NULL)
     {
-        
+
         $query = $this->produtos_model->getprodutoID($id);
 
 
@@ -254,6 +253,8 @@ class Produtos_admin extends CI_Controller
             $data['classe'] = $this->input->post('classeProduto');
             $data['linha'] = $this->input->post('linhaProduto');
             $data['descricao_curta'] = $this->input->post('descCurta');
+            $data['yoast_description'] = $this->input->post('yoastDescription');
+            $data['yoast_keywords'] = $this->input->post('yoastKeywords');
 
             $this->load->library('upload');
 
@@ -327,69 +328,64 @@ class Produtos_admin extends CI_Controller
             }
 
             $this->produtos_model->atualizarProduto($data, ['id' => $this->input->post('idProduto')]);
-            
+
             //Salvando a relação produto x cor
-            if( $this->input->post('cores') ){
+            if ($this->input->post('cores')) {
 
                 $this->load->model('produto_tem_cor_model');
                 $this->produto_tem_cor_model->limpar_por_produto($this->input->post('idProduto'));
 
-                foreach( $this->input->post('cores') AS $cor ){
+                foreach ($this->input->post('cores') as $cor) {
                     $this->produto_tem_cor_model->salvar($this->input->post('idProduto'), $cor);
                 }
-
             }
 
 
             //Salvando a relação produto x linha
-            if( $this->input->post('linhas') ){
+            if ($this->input->post('linhas')) {
 
                 $this->load->model('produto_tem_linha_model');
                 $this->produto_tem_linha_model->limpar_por_produto($this->input->post('idProduto'));
 
-                foreach( $this->input->post('linhas') AS $lin ){
+                foreach ($this->input->post('linhas') as $lin) {
                     $this->produto_tem_linha_model->salvar($this->input->post('idProduto'), $lin);
                 }
-
             }
 
 
             //Salvando a relação produto x tipos
-            if( $this->input->post('tipos') ){
+            if ($this->input->post('tipos')) {
 
                 $this->load->model('produto_tem_tipo_produto_model');
                 $this->produto_tem_tipo_produto_model->limpar_por_produto($this->input->post('idProduto'));
 
-                foreach( $this->input->post('tipos') AS $tipo ){
+                foreach ($this->input->post('tipos') as $tipo) {
                     $this->produto_tem_tipo_produto_model->salvar($this->input->post('idProduto'), $tipo);
                 }
-
             }
 
 
             //Salvando a relação produto x filtragem quimica
-            if( $this->input->post('quimicas') ){
+            if ($this->input->post('quimicas')) {
 
                 $this->load->model('produto_tem_filtragem_quimica_model');
                 $this->produto_tem_filtragem_quimica_model->limpar_por_produto($this->input->post('idProduto'));
 
-                foreach( $this->input->post('quimicas') AS $qui ){
+                foreach ($this->input->post('quimicas') as $qui) {
                     $this->produto_tem_filtragem_quimica_model->salvar($this->input->post('idProduto'), $qui);
                 }
-
             }
 
 
             //Salvando a relação produto x filtragem mecanica
-            if( $this->input->post('mecanicas') ){
+            if ($this->input->post('mecanicas')) {
 
                 $this->load->model('produto_tem_filtragem_mecanica_model');
                 $this->produto_tem_filtragem_mecanica_model->limpar_por_produto($this->input->post('idProduto'));
 
-                foreach( $this->input->post('mecanicas') AS $mec ){
+                foreach ($this->input->post('mecanicas') as $mec) {
                     $this->produto_tem_filtragem_mecanica_model->salvar($this->input->post('idProduto'), $mec);
                 }
-
             }
 
 

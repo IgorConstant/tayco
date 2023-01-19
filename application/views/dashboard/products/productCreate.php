@@ -40,6 +40,24 @@
                             <input type="text" class="form-control" id="descCurta" name="descCurta">
                         </div>
                     </div>
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="tamProduto" class="form-label">Tamanho do Produto</label>
+                            <input type="text" class="form-control" id="tamProduto" name="tamProduto">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="yoastKeywords" class="form-label">Yoast SEO - Keywords</label>
+                            <input type="text" class="form-control" id="yoastKeywords" name="yoastKeywords">
+                        </div>
+                    </div>
+                     <div class="col-4">
+                        <div class="mb-3">
+                            <label for="yoastDescription" class="form-label">Yoast SEO - Description</label>
+                            <input type="text" class="form-control" id="yoastDescription" name="yoastDescription">
+                        </div>
+                    </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <label for="corProduto" class="form-label">Cores do Produto</label>
@@ -66,7 +84,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <div class="mb-3">
                             <label for="corProduto" class="form-label">Linhas do Produto</label>
                             <select class="form-control" name="linhas[]" id="linha" multiple>
@@ -80,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-2">
                         <div class="mb-3">
                             <label for="corProduto" class="form-label">Filtragens Químicas</label>
                             <select class="form-control" name="quimicas[]" id="quimicas" multiple>
@@ -93,7 +111,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <div class="mb-3">
                             <label for="corProduto" class="form-label">Filtragens Mecânicas</label>
                             <select class="form-control" name="mecanicas[]" id="mecanicas" multiple>
@@ -104,12 +122,6 @@
                                 }
                                 ?>
                             </select>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <label for="tamProduto" class="form-label">Tamanho do Produto</label>
-                            <input type="text" class="form-control" id="tamProduto" name="tamProduto">
                         </div>
                     </div>
                     <div class="col-12">

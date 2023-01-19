@@ -38,6 +38,18 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="yoastKeywords" class="form-label">Yoast SEO - Keywords</label>
+                            <input type="text" class="form-control" id="yoastKeywords" name="yoastKeywords">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="yoastDescription" class="form-label">Yoast SEO - Description</label>
+                            <input type="text" class="form-control" id="yoastDescription" name="yoastDescription">
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="mb-4">
                             <label for="editor1" class="form-label">Aplicação do Acessório</label>

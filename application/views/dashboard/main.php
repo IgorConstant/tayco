@@ -32,5 +32,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body second-card">
+                    <a class="listar-mentores" href="posts/adicionarpost"><i class="fas fa-plus mr-2"></i> Adicionar Post</a>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
