@@ -9,6 +9,7 @@
     <meta name="description" content="<?php echo $description ?>">
     <meta name="author" content="Igor Henrique Constant">
     <link rel="icon" type="image/png" href="<?php echo base_url('assets/site/images/favicon-tayco.png'); ?>" />
+
     <!-- OGTags -->
     <meta property="og:title" content="Tayco" />
     <meta property="og:url" content="https://www.tayco.com.br" />
@@ -17,6 +18,12 @@
     <meta property="og:description" content="<?php echo $description ?>" />
     <meta property="og:image" content="<?php echo base_url("assets/site/images/ogtag-img.jpg") ?>" />
     <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Tags -->
+    <?php foreach ($app_tags as $tag_header) { ?>
+        <?= $tag_header->tag_header ?>
+    <?php } ?>
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo base_url("assets/site/images/favicon.png") ?>" type="image/x-icon">
@@ -31,6 +38,8 @@
 </head>
 
 <body>
+
+
     <header>
         <div uk-sticky="sel-target: .uk-container; cls-active: uk-navbar-sticky">
             <nav class="uk-container uk-padding-small" uk-navbar="mode: click">

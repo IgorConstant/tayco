@@ -32,7 +32,7 @@
 
 <!-- JS -->
 <script src="<?php echo base_url('assets/site/js/main.js') ?>"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="<?php echo base_url('assets/site/js/owl.carousel.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/site/js/owlScript.js') ?>"></script>
@@ -104,5 +104,10 @@
 <script>
     $("#formValidate").validate();
 </script>
+
+<!-- Tags -->
+<?php foreach ($app_tags as $tag_footer) { ?>
+    <?= $tag_footer->tag_footer ?>
+<?php } ?>
 
 </body>

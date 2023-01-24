@@ -7,6 +7,12 @@ class Usuarios extends CI_Controller
     {
         parent::__construct();
 
+        if (!$this->session->userdata('logado') == TRUE) {
+
+            $this->session->set_flashdata('erro_login', '<div class="alert alert-danger" role="alert">Você precisa realizar o login!</div>');
+            redirect('login');
+        }
+
 
         $this->load->model('usuarios_model');
         $this->load->helper('security');
@@ -37,7 +43,7 @@ class Usuarios extends CI_Controller
         if ($this->form_validation->run() == TRUE) {
             $dados['nome'] = $this->input->post('nome');
             $dados['email'] = $this->input->post('email');
-            $dados['senha'] = do_hash($this->input->post('senha'), 'sha1');
+            $dados['senha'] = hash('sha1', $this->input->post('senha'));
             $dados['ativo'] = 1;
 
             $this->usuarios_model->doInsert($dados);
@@ -81,7 +87,8 @@ class Usuarios extends CI_Controller
             //Salvar no BD
             $dados['nome'] = $this->input->post('nome');
             $dados['email'] = $this->input->post('email');
-            $dados['senha'] =  do_hash($this->input->post('senha'), 'sha1');
+            $dados['senha'] = hash('sha1', $this->input->post('senha'));
+            //$dados['senha'] =  do_hash($this->input->post('senha'), 'sha1');
 
 
             $this->usuarios_model->doUpdate($dados, ['id' => $this->input->post('id')]);

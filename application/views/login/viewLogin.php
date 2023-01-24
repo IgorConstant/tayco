@@ -35,18 +35,25 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="blockForm">
-                    <form action="" method="POST">
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="inputEmail">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputPass" class="form-label">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="inputPass">
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary w-100">Entrar</button>
-                        </div>
+                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                    <?php echo $this->session->flashdata('form'); ?>
+
+                    <?php
+                    $attributes = array('role' => 'form');
+                    echo form_open('', $attributes);
+                    ?>
+
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="inputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPass" class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" id="inputPass">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                    </div>
                     </form>
                 </div>
             </div>

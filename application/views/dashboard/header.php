@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- CKEditor -->
-    <script src="http://cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/7bc0885a91.js"></script>
@@ -100,9 +100,12 @@
                         </li>
                     </ul>
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Manutenção</span>
+                        <span>Manutenção / Inserts</span>
                     </h6>
                     <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <?php echo anchor('tags/salvartags', '<i class="fas fa-tags"></i> Tags</span>', array('class' => 'nav-link')) ?>
+                        </li>
                         <li class="nav-item">
                             <?php echo anchor('backup/gerarsql', '<i class="fas fa-cloud-download-alt"></i> Backup SQL</span>', array('class' => 'nav-link')) ?>
                         </li>

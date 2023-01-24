@@ -9,6 +9,12 @@ class Posts extends CI_Controller
         parent::__construct();
 
 
+        if (!$this->session->userdata('logado') == TRUE) {
+
+            $this->session->set_flashdata('erro_login', '<div class="alert alert-danger" role="alert">Você precisa realizar o login!</div>');
+            redirect('login');
+        }
+
         $this->load->model('blog_model');
         $this->load->library('form_validation');
     }
