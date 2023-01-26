@@ -88,7 +88,7 @@
         </div>
         <div>
           <div>
-            <img src='../assets/site/images/img1.png' alt='Imagem 1'>
+            <img src='../assets/site/images/img1.webp' alt='Imagem 1'>
           </div>
         </div>
         <div>
@@ -98,12 +98,12 @@
         </div>
         <div>
           <div>
-            <img src='../assets/site/images/img2.png' alt='Imagem 2'>
+            <img src='../assets/site/images/img2.webp' alt='Imagem 2'>
           </div>
         </div>
         <div>
           <div>
-            <img src='../assets/site/images/img3.png' alt='Imagem 3'>
+            <img src='../assets/site/images/img3.webp' alt='Imagem 3'>
           </div>
         </div>
         <div>
@@ -113,7 +113,7 @@
         </div>
         <div>
           <div>
-            <img src='../assets/site/images/img4.png' alt='Imagem 4'>
+            <img src='../assets/site/images/img4.webp' alt='Imagem 4'>
           </div>
         </div>
         <div>

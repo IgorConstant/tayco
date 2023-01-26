@@ -175,7 +175,7 @@
                 <div>
                     <div>
                         <div class="imgBlock">
-                            <img src="<?php echo base_url('assets/site/images/banner-middle.jpg') ?>" alt="BannerMiddle">
+                            <img src="<?php echo base_url('assets/site/images/banner-middle.webp') ?>" alt="BannerMiddle">
                         </div>
                     </div>
                 </div>
