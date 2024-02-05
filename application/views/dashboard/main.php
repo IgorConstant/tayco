@@ -14,14 +14,28 @@
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body second-card">
-                    <a class="listar-mentores" href="banner/adicionarbanner"><i class="fas fa-plus mr-2"></i> Adicionar Banner</a>
+                    <a class="listar-mentores" href="banners/adicionarbanner"><i class="fas fa-plus mr-2"></i> Adicionar Banner</a>
                 </div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body second-card">
-                    <a class="listar-mentores" href="galeria/adicionargaleria"><i class="fas fa-plus mr-2"></i> Adicionar Mídia</a>
+                    <a class="listar-mentores" href="galeria/adicionarfotos"><i class="fas fa-plus mr-2"></i> Adicionar Mídia</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body second-card">
+                    <a class="listar-mentores" href="produtos_admin/adicionarprodutos"><i class="fas fa-plus mr-2"></i> Adicionar Produto</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body second-card">
+                    <a class="listar-mentores" href="posts/adicionarpost"><i class="fas fa-plus mr-2"></i> Adicionar Post</a>
                 </div>
             </div>
         </div>

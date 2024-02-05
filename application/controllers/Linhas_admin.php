@@ -11,6 +11,12 @@ class Linhas_admin extends CI_Controller
 
         parent::__construct();
 
+        if (!$this->session->userdata('logado') == TRUE) {
+
+            $this->session->set_flashdata('erro_login', '<div class="alert alert-danger" role="alert">Você precisa realizar o login!</div>');
+            redirect('login');
+        }
+
         //Load do Model
         $this->load->model('linhas_model');
 
@@ -50,7 +56,7 @@ class Linhas_admin extends CI_Controller
 
 
         if ($this->form_validation->run() == TRUE) {
-           
+
             $inputAddAcessorio['nome_linha']    = $this->input->post('nome');
             $inputAddAcessorio['slug']          = $this->input->post('slug');
 
@@ -58,7 +64,6 @@ class Linhas_admin extends CI_Controller
             $this->linhas_model->adicionar($inputAddAcessorio);
             $this->session->set_flashdata('msg', '<div class="alert alert-success">Adicionado com sucesso!</div>');
             redirect('linhas_admin', 'refresh');
-            
         } else {
 
 
@@ -90,7 +95,6 @@ class Linhas_admin extends CI_Controller
             $this->linhas_model->atualizar($inputEditAcessorio, ['id' => $this->input->post('id')]);
             $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Atualizado com sucesso!</div>');
             redirect('linhas_admin', 'refresh');
-
         } else {
 
             //Titulo

@@ -50,6 +50,8 @@ class Acessorios_admin extends CI_Controller
         $this->form_validation->set_rules('slugAcessorio', 'Slug Acessório', 'required', array('required' => 'É necessário informar o slug do acessório'));
         $this->form_validation->set_rules('nomeProduto', 'Nome Produto', 'required', array('required' => 'É necessário vincular a um produto'));
         $this->form_validation->set_rules('appProduto', 'App Produto', 'required', array('required' => 'É necessário vincular a um produto'));
+        $this->form_validation->set_rules('yoastKeywords', 'KEYWORDS', 'required', array('required' => 'O Campo keywords é obrigatório'));
+        $this->form_validation->set_rules('yoastDescription', 'DESCRIPTION', 'required', array('required' => 'O Campo description é obrigatório'));
 
 
         if ($this->form_validation->run() == TRUE) {
@@ -72,6 +74,8 @@ class Acessorios_admin extends CI_Controller
                 $inputAddAcessorio['slug'] = $this->input->post('slugAcessorio');
                 $inputAddAcessorio['id_app_product'] = $this->input->post('nomeProduto');
                 $inputAddAcessorio['aplicacao'] = $this->input->post('appProduto');
+                $inputAddAcessorio['yoast_keywords'] = $this->input->post('yoastKeywords');
+                $inputAddAcessorio['yoast_description'] = $this->input->post('yoastDescription');
                 $inputAddAcessorio['imagem'] = $this->upload->data('file_name');
 
 
@@ -123,6 +127,8 @@ class Acessorios_admin extends CI_Controller
             $inputEditAcessorio['nome_acessorio'] = $this->input->post('nomeAcessorio');
             $inputEditAcessorio['slug'] = $this->input->post('slugAcessorio');
             $inputEditAcessorio['id_app_product'] = $this->input->post('nomeProduto');
+            $inputEditAcessorio['yoast_keywords'] = $this->input->post('yoastKeywords');
+            $inputEditAcessorio['yoast_description'] = $this->input->post('yoastDescription');
             $inputEditAcessorio['aplicacao'] = $this->input->post('appProduto');
 
             if ($nome_imagem) {

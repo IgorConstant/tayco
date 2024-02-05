@@ -4,4 +4,27 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+
+    .titleBlock {
+        h1 {
+            text-transform: uppercase;
+            margin: 5px 0;
+            font-size: 30px;
+        }
+
+        hr {
+            width: 40px;
+            border-top: 2px solid $red-color;
+            margin: 10px 0;
+        }
+    }
+
+    .content {
+        padding: 20px;
+
+        p {
+            font-size: 14px;
+        }
+    }
 }

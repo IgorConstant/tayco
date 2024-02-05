@@ -8052,7 +8052,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #moreContent .bgFirst {
-  background: url(../../../assets/site/images/textura-azul-claro.png);
+  background: url(../../../assets/site/images/textura-azul-claro.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8066,7 +8066,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #moreContent .bgSecond {
-  background: url(../../../assets/site/images/textuta-azul-medio-escuro.png);
+  background: url(../../../assets/site/images/textuta-azul-medio-escuro.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8080,7 +8080,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #moreContent .bgThird {
-  background: url(../../../assets/site/images/textura-darkblue.png);
+  background: url(../../../assets/site/images/textura-darkblue.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8197,7 +8197,7 @@ header .uk-navbar-toggle {
 }
 
 #cardsIntro .uk-card-default {
-  background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+  background: url(../../../assets/site/images/bg-textura.webp) no-repeat center center;
   background-size: cover;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
@@ -8280,7 +8280,7 @@ header .uk-navbar-toggle {
 }
 
 #abntBlock {
-  background: url(../../../assets/site/images/bg-abnt.png) no-repeat center center;
+  background: url(../../../assets/site/images/bg-abnt.webp) no-repeat center center;
   background-size: cover;
   padding: 80px 0;
 }
@@ -8290,7 +8290,7 @@ header .uk-navbar-toggle {
 }
 
 #classeProduto .bgProduct {
-  background: url(../../../assets/site/images/img-destaque-produto.png) no-repeat center center;
+  background: url(../../../assets/site/images/img-destaque-produto.webp) no-repeat center center;
   background-size: cover;
   height: 800px;
 }
@@ -8346,7 +8346,7 @@ header .uk-navbar-toggle {
 }
 
 #stamps {
-  background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+  background: url(../../../assets/site/images/bg-textura.webp) no-repeat center center;
   background-size: cover;
   padding: 80px 0;
 }
@@ -8370,7 +8370,7 @@ header .uk-navbar-toggle {
 }
 
 #headerSobre {
-  background: url(../../../assets/site/images/banner-quemsomos.jpg);
+  background: url(../../../assets/site/images/banner-quemsomos.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8399,7 +8399,7 @@ header .uk-navbar-toggle {
 
 #contentAbout .fotoEmpresa {
   height: 500px;
-  background: url(../../../assets/site/images/foto-empresa.jpg);
+  background: url(../../../assets/site/images/foto-empresa.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8425,7 +8425,7 @@ header .uk-navbar-toggle {
 }
 
 #bgMiddle {
-  background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+  background: url(../../../assets/site/images/bg-textura.webp) no-repeat center center;
   background-size: cover;
   padding: 100px 0;
 }
@@ -8471,7 +8471,7 @@ header .uk-navbar-toggle {
 
 #contentHow .fotoGalpao {
   height: 500px;
-  background: url(../../../assets/site/images/foto-empresa-2.jpg);
+  background: url(../../../assets/site/images/foto-empresa-2.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8535,7 +8535,7 @@ header .uk-navbar-toggle {
 }
 
 #headerContent {
-  background: url(../../../assets/site/images/banner-produtos.jpg);
+  background: url(../../../assets/site/images/banner-produtos.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8756,8 +8756,28 @@ header .uk-navbar-toggle {
   background-size: cover;
 }
 
+#introAcessorios .titleBlock h1 {
+  text-transform: uppercase;
+  margin: 5px 0;
+  font-size: 30px;
+}
+
+#introAcessorios .titleBlock hr {
+  width: 40px;
+  border-top: 2px solid #ee2b37;
+  margin: 10px 0;
+}
+
+#introAcessorios .content {
+  padding: 20px;
+}
+
+#introAcessorios .content p {
+  font-size: 14px;
+}
+
 #blogHeader {
-  background: url(../../../assets/site/images/banner-blog.jpg);
+  background: url(../../../assets/site/images/banner-blog.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8838,7 +8858,7 @@ header .uk-navbar-toggle {
 }
 
 #headerContato {
-  background: url(../../../assets/site/images/banner-contato.jpg);
+  background: url(../../../assets/site/images/banner-contato.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8866,7 +8886,7 @@ header .uk-navbar-toggle {
 }
 
 #contentContacts {
-  background: url(../../../assets/site/images/bg-textura.png) no-repeat center center;
+  background: url(../../../assets/site/images/bg-textura.webp) no-repeat center center;
   background-size: cover;
   padding: 100px 0;
 }

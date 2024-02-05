@@ -103,10 +103,14 @@ body {
 	}
 }
 
+.nav-link {
+	padding: 5px 15px!important;
+}
+
 .sidebar .nav-link {
 	font-weight: 700;
 	color: #333;
-	font-size: 15px;
+	font-size: 13px;
 	font-family: "Roboto Condensed", sans-serif;
 	text-transform: uppercase;
 }

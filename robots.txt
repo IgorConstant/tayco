@@ -1,0 +1,6 @@
+Sitemap: https://tayco.agenciaduetto.com.br/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /upload
+Disallow: /assets 

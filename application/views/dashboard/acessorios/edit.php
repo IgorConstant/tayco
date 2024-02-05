@@ -33,9 +33,21 @@
                             <label for="nomeProduto" class="form-label">Vincule a um produto</label>
                             <select id="nomeProduto" name="nomeProduto" class="form-select">
                                 <?php foreach ($app_nameproduct as $produtos) { ?>
-                                    <option value="<?= $produtos->id ?>"><?= $produtos->nome ?></option>
+                                    <option value="<?= $produtos->id ?>" selected><?= $produtos->nome ?></option>
                                 <?php } ?>
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="yoastKeywords" class="form-label">Yoast SEO - Keywords</label>
+                            <input type="text" class="form-control" id="yoastKeywords" name="yoastKeywords" value="<?php echo ($query->yoast_keywords) ?>">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="yoastDescription" class="form-label">Yoast SEO - Description</label>
+                            <input type="text" class="form-control" id="yoastDescription" name="yoastDescription" value="<?php echo ($query->yoast_description) ?>">
                         </div>
                     </div>
                     <div class="col-12">
