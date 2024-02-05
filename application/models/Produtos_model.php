@@ -37,4 +37,10 @@ class Produtos_model extends CI_Model
             $this->db->update('app_product', $dados, $condicao);
         }
     }
+
+    public function get_products() {
+        $this->db->select('slug');
+        $query = $this->db->get('app_product');
+        return $query->result();
+    }
 }
